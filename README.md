@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Components
 
 - Springboot:
-   - Used to implement the project backend module that will provide REST Api operations for view;
+   - Used to implement the project backend module that will provide REST API operations for view;
 - JDK 1.8:
    - Used on project backend construction offering more useful features;
 - ReactJS:
