@@ -30,3 +30,10 @@
   <Route path="/createpost" element={<Home />} />
   </Routes>
   I'm also going to implement Typescript and TypeORM on my own ^^
+
+- Aula 6
+- minuto 6:18
+- 6:18 if you're using latest v6 react-router-dom then instead of useHistory go with useNavigate  
+  import { useNavigate } from "react-router-dom";
+  let navigate = useNavigate();
+  onClick={() => navigate(`/post/${value.id}`)}
