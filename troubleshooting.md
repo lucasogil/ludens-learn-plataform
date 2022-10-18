@@ -37,3 +37,29 @@
   import { useNavigate } from "react-router-dom";
   let navigate = useNavigate();
   onClick={() => navigate(`/post/${value.id}`)}
+
+- Aula 8
+- minuto 20:06
+- trativa de erro muda para react acima da versao 1.6
+- I solved it my self if you want to catch errors in node version v16.14.0 it will not work this way the server will keep crashing on testing you have to catch error like this:
+  router.post("/auth", async (req, res) => {
+  const { username, password } = req.body;
+
+      const user = await login.findOne({ where: { username: username } });
+
+      if (!user) res.json({ error: "User Doesn't Exist" })
+      else{
+
+      bcrypt.compare(password, user.password).then((match) => {
+        if (!match) res.json({ error: "Wrong Username And Password Combination" })
+        else{
+          res.json("Logged in");
+        }
+
+
+      });
+      }
+
+  })
+
+  module.exports = router;

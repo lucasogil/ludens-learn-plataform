@@ -31,7 +31,7 @@ body {
 .post .title {
   flex: 20%;
   border-bottom: 1px solid lightgray;
-  background-color: dodgerblue;
+  background-color: slateblue;
   display: grid;
   place-content: center;
   color: white;
@@ -49,7 +49,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  background-color: dodgerblue;
+  background-color: slateblue;
   color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -72,7 +72,7 @@ body {
   width: 500px;
   height: auto;
   padding: 20px;
-  border: 5px solid dodgerblue;
+  border: 5px solid slateblue;
   border-radius: 5px;
 }
 
@@ -97,7 +97,7 @@ body {
 
 .formContainer button:hover {
   cursor: pointer;
-  background-color: dodgerblue;
+  background-color: slateblue;
 }
 
 span {
@@ -109,7 +109,7 @@ span {
 .navbar {
   width: 100%;
   height: 70px;
-  background-color: dodgerblue;
+  background-color: slateblue;
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -162,12 +162,12 @@ button {
 }
 
 .addCommentContainer button {
-  background-color: dodgerblue;
+  background-color: slateblue;
   color: white;
 }
 
 .addCommentContainer input {
-  border: 2px solid dodgerblue;
+  border: 2px solid slateblue;
 }
 
 .rightSide .listOfComments {
@@ -222,10 +222,10 @@ button {
 }
 
 .loginContainer button {
-  background-color: dodgerblue;
+  background-color: slateblue;
   color: white;
 }
 
 .loginContainer input {
-  border: 2px solid dodgerblue;
+  border: 2px solid slateblue;
 }
