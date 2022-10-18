@@ -63,3 +63,10 @@
   })
 
   module.exports = router;
+
+- Aula9
+- useHistory is now useNavigate from React-router-dom
+  you can use use it without adding "push":
+  navigate("/");
+  not:
+  history.push("/");
