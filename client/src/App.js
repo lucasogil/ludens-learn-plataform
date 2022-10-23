@@ -5,6 +5,7 @@ import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -32,7 +33,7 @@ function App() {
           });
         }
       });
-  });
+  }, []);
 
   const logout = () => {
     localStorage.removeItem("accessToken");
@@ -44,17 +45,23 @@ function App() {
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
           <div className="navbar">
-            <Link to="/"> Home Page</Link>
-            <Link to="/createpost"> Create A Post</Link>
-            {!authState.status ? (
-              <>
-                <Link to="/login"> Login</Link>
-                <Link to="/registration"> Registration</Link>
-              </>
-            ) : (
-              <button onClick={logout}> Logout </button>
-            )}
-            <h1> {authState.username} </h1>
+            <div className="links">
+              {!authState.status ? (
+                <>
+                  <Link to="/login"> Login</Link>
+                  <Link to="/registration"> Registration</Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/"> Home Page</Link>
+                  <Link to="/createpost"> Create A Post</Link>
+                </>
+              )}
+            </div>
+            <div className="loggedInContainer">
+              <h1>{authState.username} </h1>
+              {authState.status && <button onClick={logout}> Logout</button>}
+            </div>
           </div>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -62,6 +69,7 @@ function App() {
             <Route path="/post/:id" element={<Post />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
       </AuthContext.Provider>

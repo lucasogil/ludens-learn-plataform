@@ -18,9 +18,10 @@ function Post() {
     axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
       setComments(response.data);
     });
-  }, [id]);
+  }, []);
 
   const addComment = () => {
+    console.log("id = " + id);
     axios
       .post(
         "http://localhost:3001/comments/",
@@ -41,7 +42,6 @@ function Post() {
           const commentToAdd = {
             commentBody: newComment,
             username: response.data.username,
-            id: response.data.id,
           };
           setComments([...comments, commentToAdd]);
           setNewComment("");
@@ -69,7 +69,9 @@ function Post() {
         <div className="post" id="individual">
           <div className="title"> {postObject.title}</div>
           <div className="body">{postObject.postText}</div>
-          <div className="footer">{postObject.username}</div>
+          <div className="footer">
+            {postObject.username} <button> Delete Post </button>
+          </div>
         </div>
       </div>
       <div className="rightSide">

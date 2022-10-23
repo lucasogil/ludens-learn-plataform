@@ -8,6 +8,10 @@ module.exports = (sequileze, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    PostId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
 
   return Comments;
