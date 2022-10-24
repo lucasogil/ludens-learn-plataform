@@ -6,6 +6,8 @@ import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
+import Profile from "./pages/Profile";
+import ChangePassword from "./pages/ChangePassword";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -59,7 +61,9 @@ function App() {
               )}
             </div>
             <div className="loggedInContainer">
-              <h1>{authState.username} </h1>
+              <Link to={`/profile/${authState.id}`}>
+                <h1>{authState.username} </h1>
+              </Link>
               {authState.status && <button onClick={logout}> Logout</button>}
             </div>
           </div>
@@ -69,6 +73,8 @@ function App() {
             <Route path="/post/:id" element={<Post />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/changepassword" element={<ChangePassword />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
