@@ -48,7 +48,7 @@ function Profile() {
               >
                 {value.postText}
               </div>
-              <div className="footer">
+              <div className="infobar">
                 <div className="username"> {value.username} </div>
                 <div>
                   <ThumbUpAltIcon />

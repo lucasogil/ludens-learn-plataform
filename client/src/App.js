@@ -1,5 +1,7 @@
-import "./App.css";
+import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Upload from "./components/Upload/Upload";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
@@ -55,8 +57,9 @@ function App() {
                 </>
               ) : (
                 <>
-                  <Link to="/"> Home Page</Link>
+                  <Link to="/">Home Page</Link>
                   <Link to="/createpost"> Create A Post</Link>
+                  <Link to="/upload"> Upload</Link>
                 </>
               )}
             </div>
@@ -75,10 +78,13 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/changepassword" element={<ChangePassword />} />
+            <Route path="/upload" element={<Upload />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
       </AuthContext.Provider>
+      <div className="margem1" />
+      <Footer />
     </div>
   );
 }

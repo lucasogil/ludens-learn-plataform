@@ -75,7 +75,7 @@ function Home() {
             <div className="body" onClick={() => navigate(`/post/${value.id}`)}>
               {value.postText}
             </div>
-            <div className="footer">
+            <div className="infobar">
               <div className="username">
                 <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
               </div>

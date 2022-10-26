@@ -43,7 +43,7 @@ body {
   place-content: center;
 }
 
-.post .footer {
+.post .infobar {
   flex: 20%;
   border-top: 1px solid lightgray;
   display: flex;
@@ -55,10 +55,10 @@ body {
   border-bottom-right-radius: 10px;
 }
 
-.footer .username {
+.infobar .username {
   flex: 50%;
 }
-.footer .buttons {
+.infobar .buttons {
   flex: 50%;
   display: flex;
   justify-content: flex-end;
@@ -150,7 +150,23 @@ span {
   justify-content: flex-end;
   align-items: center;
 }
-a {
+
+a:link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:active {
   margin-left: 20px;
   text-decoration: none;
   color: white;
@@ -278,4 +294,14 @@ button {
 
 .loginContainer input {
   border: 2px solid dodgerblue;
+}
+
+div.margem1 {
+  background: white;
+  color: #fff;
+  padding: 50px;
+}
+
+p.borda1 {
+  border-top: 3px solid #000;
 }
