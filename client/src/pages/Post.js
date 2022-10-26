@@ -119,7 +119,7 @@ function Post() {
           >
             {postObject.postText}
           </div>
-          <div className="footer">
+          <div className="infobar">
             {postObject.username}{" "}
             {authState.username === postObject.username && (
               <button
