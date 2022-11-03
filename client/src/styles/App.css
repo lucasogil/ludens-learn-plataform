@@ -55,7 +55,7 @@ body {
   border-bottom-right-radius: 10px;
 }
 
-.infobar .username {
+.infobar .profilename {
   flex: 50%;
 }
 .infobar .buttons {

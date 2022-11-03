@@ -15,7 +15,7 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then(() => {
+    axios.post("http://localhost:3001/api/users", data).then(() => {
       console.log(data);
     });
   };
@@ -31,7 +31,7 @@ function Registration() {
           <label>Username: </label>
           <ErrorMessage name="username" component="span" />
           <Field
-            autocomplete="off"
+            autoComplete="off"
             id="inputCreatePost"
             name="username"
             placeholder="(Ex. John...)"
@@ -39,7 +39,7 @@ function Registration() {
           <label>Password: </label>
           <ErrorMessage name="password" component="span" />
           <Field
-            autocomplete="off"
+            autoComplete="off"
             type="password"
             id="inputCreatePost"
             name="password"

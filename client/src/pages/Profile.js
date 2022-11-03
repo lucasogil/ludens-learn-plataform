@@ -13,13 +13,17 @@ function Profile() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/basicInfo/${id}`).then((response) => {
-      setUsername(response.data.username);
-    });
+    axios
+      .get(`http://localhost:3001/api/users/basicInfo/${id}`)
+      .then((response) => {
+        setUsername(response.data.username);
+      });
 
-    axios.get(`http://localhost:3001/posts/byUserId/${id}`).then((response) => {
-      setListOfPosts(response.data);
-    });
+    axios
+      .get(`http://localhost:3001/api/posts/byUserId/${id}`)
+      .then((response) => {
+        setListOfPosts(response.data);
+      });
   }, []);
 
   return (
@@ -49,7 +53,7 @@ function Profile() {
                 {value.postText}
               </div>
               <div className="infobar">
-                <div className="username"> {value.username} </div>
+                <div className="profilename"> {value.username} </div>
                 <div>
                   <ThumbUpAltIcon />
                   <label> {value.Likes.length}</label>

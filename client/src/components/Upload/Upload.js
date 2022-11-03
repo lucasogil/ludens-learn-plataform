@@ -51,13 +51,20 @@ class Upload extends React.Component {
       data.append("file", this.state.selectedVideos[i]);
     }
     axios
-      .post("http://127.0.0.1:3333/api/upload", data, {
-        onUploadProgress: (ProgressEvent) => {
-          this.setState({
-            loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100,
-          });
+      .post(
+        "http://localhost:3001/api/upload",
+        data,
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
         },
-      })
+        {
+          onUploadProgress: (ProgressEvent) => {
+            this.setState({
+              loaded: (ProgressEvent.loaded / ProgressEvent.total) * 100,
+            });
+          },
+        }
+      )
       .then((res) => {
         toast.success("Upload Successful");
       })

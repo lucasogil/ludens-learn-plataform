@@ -16,7 +16,7 @@ function Home() {
       navigate("/login");
     } else {
       axios
-        .get("http://localhost:3001/posts", {
+        .get("http://localhost:3001/api/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -33,7 +33,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "http://localhost:3001/likes",
+        "http://localhost:3001/api/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )
@@ -76,7 +76,7 @@ function Home() {
               {value.postText}
             </div>
             <div className="infobar">
-              <div className="username">
+              <div className="profilename">
                 <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
               </div>
               <div className="buttons">

@@ -1,7 +1,9 @@
 import "./styles/App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Upload from "./components/Upload/Upload";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
@@ -23,7 +25,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("http://localhost:3001/api/users/auth", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
@@ -58,8 +60,9 @@ function App() {
               ) : (
                 <>
                   <Link to="/">Home Page</Link>
-                  <Link to="/createpost"> Create A Post</Link>
+                  <Link to="/createpost"> Criar um Curso</Link>
                   <Link to="/upload"> Upload</Link>
+                  <Link to="/dashboard"> Dashboard</Link>
                 </>
               )}
             </div>
@@ -79,12 +82,12 @@ function App() {
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/changepassword" element={<ChangePassword />} />
             <Route path="/upload" element={<Upload />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/video/:videoTitle" element={<VideoPlayer />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
       </AuthContext.Provider>
-      <div className="margem1" />
-      <Footer />
     </div>
   );
 }

@@ -17,7 +17,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/posts", data, {
+      .post("http://localhost:3001/api/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
@@ -47,7 +47,7 @@ function CreatePost() {
           <label>Title: </label>
           <ErrorMessage name="title" component="span" />
           <Field
-            autocomplete="off"
+            autoComplete="off"
             id="inputCreatePost"
             name="title"
             placeholder="(Ex. Title...)"
@@ -55,7 +55,7 @@ function CreatePost() {
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
-            autocomplete="off"
+            autoComplete="off"
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Post...)"
