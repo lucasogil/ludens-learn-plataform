@@ -1,13 +1,8 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { withRouter } from "../../helpers/withRouter";
 import axios from "axios";
-
 import videojs from "video.js";
 import "./VideoPlayer.css";
-
-function withParams(Component) {
-  return (props) => <Component {...props} params={useParams()} />;
-}
 
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -24,6 +19,7 @@ class VideoPlayer extends React.Component {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((res) => {
+        console.log(JSON.stringify(res));
         res.data.map((video) => {
           console.log("props = " + JSON.stringify(this.props));
           if (video.upload_title === this.props.params.videoTitle) {
@@ -63,6 +59,8 @@ class VideoPlayer extends React.Component {
   }
 
   render() {
+    if (!localStorage.getItem("accessToken"))
+      return this.props.navigate("/login");
     return (
       <div className="row" style={{ width: "100vw" }}>
         <div className="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto mt-5">
@@ -82,4 +80,4 @@ class VideoPlayer extends React.Component {
   }
 }
 
-export default withParams(VideoPlayer);
+export default withRouter(VideoPlayer);
