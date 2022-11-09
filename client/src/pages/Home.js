@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import { AuthContext } from "../helpers/AuthContext";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);

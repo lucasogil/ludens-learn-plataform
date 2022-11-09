@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Upload from "./components/Upload/Upload";
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import Logout from "./helpers/Logout";
 import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
@@ -41,44 +43,18 @@ function App() {
       });
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("accessToken");
-    setAuthState({ username: "", id: 0, status: false });
-  };
-
   return (
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-          <div className="navbar">
-            <div className="links">
-              {!authState.status ? (
-                <>
-                  <Link to="/login"> Login</Link>
-                  <Link to="/registration"> Registration</Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/">Home Page</Link>
-                  <Link to="/createpost"> Criar um Curso</Link>
-                  <Link to="/upload"> Upload</Link>
-                  <Link to="/dashboard"> Dashboard</Link>
-                </>
-              )}
-            </div>
-            <div className="loggedInContainer">
-              <Link to={`/profile/${authState.id}`}>
-                <h1>{authState.username} </h1>
-              </Link>
-              {authState.status && <button onClick={logout}> Logout</button>}
-            </div>
-          </div>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/createpost" element={<CreatePost />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/changepassword" element={<ChangePassword />} />
             <Route path="/upload" element={<Upload />} />
@@ -87,6 +63,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Router>
+        <Footer />
       </AuthContext.Provider>
     </div>
   );
