@@ -21,7 +21,7 @@ function CreatePost() {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        navigate("/");
+        navigate("/feed");
       });
   };
 

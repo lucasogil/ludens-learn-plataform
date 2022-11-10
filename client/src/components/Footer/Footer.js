@@ -7,14 +7,14 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <body>
+    <main>
       <div className="sticky-footer">
         <div className="socialMedia">
           <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
         </div>
         <p> &copy; 2022 ludensplataform.com</p>
       </div>
-    </body>
+    </main>
   );
 }
 

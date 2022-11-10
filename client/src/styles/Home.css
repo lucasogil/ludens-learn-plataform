@@ -1,0 +1,58 @@
+.img-hero {
+  height: 30vh;
+}
+
+.bg-gray {
+  width: 100%;
+  background-color: lightslategray;
+}
+
+.bg-blank {
+  width: 100%;
+  background-color: white;
+}
+
+.card-projet {
+  width: 30%;
+  height: 200px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 40px;
+  text-shadow: 1px 1px 1px #864d4d, -1px -1px 7px black;
+  font-size: 30px;
+}
+
+.card-product {
+  height: 200px;
+  width: 45%;
+  margin-bottom: 40px;
+}
+
+.card-product img {
+  height: 200px;
+  width: 100%;
+}
+
+.card-product-line {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  margin: 22px 0px;
+}
+
+.card-product-line img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+h2 {
+  color: white;
+}

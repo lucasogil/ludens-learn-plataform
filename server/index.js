@@ -22,6 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Routers
+//Course
+const courseRouter = require("./routes/Courses");
+app.use("/api/courses", courseRouter);
 //Post
 const postRouter = require("./routes/Posts");
 app.use("/api/posts", postRouter);

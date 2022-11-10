@@ -12,7 +12,11 @@ module.exports = (sequileze, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    username: {
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    instructorName: {
       type: DataTypes.STRING,
       allowNull: false,
     },

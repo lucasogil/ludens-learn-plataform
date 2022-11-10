@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../helpers/AuthContext";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
-  const routeChange = () => {
+  const routeChangeLogout = () => {
     let path = `/logout`;
     navigate(path);
   };
@@ -23,7 +23,8 @@ function Navbar() {
         ) : (
           <>
             <NavLink to="/">Home Page</NavLink>
-            <NavLink to="/createpost"> Criar um Post</NavLink>
+            <NavLink to="/feed">Feed Social</NavLink>
+            <NavLink to="/createcourse"> Criar um Curso</NavLink>
             <NavLink to="/upload"> Upload</NavLink>
             <NavLink to="/dashboard"> Dashboard</NavLink>
           </>
@@ -33,7 +34,9 @@ function Navbar() {
         <NavLink to={`/profile/${authState.id}`}>
           <h2>{authState.username} </h2>
         </NavLink>
-        {authState.status && <button onClick={routeChange}> Logout</button>}
+        {authState.status && (
+          <button onClick={routeChangeLogout}> Logout</button>
+        )}
       </div>
     </nav>
   );
