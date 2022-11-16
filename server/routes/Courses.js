@@ -4,6 +4,11 @@ const router = express.Router();
 const { Courses } = require("../models");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 
+router.get("/", validateToken, async (req, res) => {
+  const listOfCourses = await Courses.findAll();
+  res.json(listOfCourses);
+});
+
 router.post("/", validateToken, async (req, res) => {
   const course = req.body;
   course.instructorName = req.user.username;

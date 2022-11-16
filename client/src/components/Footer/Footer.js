@@ -10,7 +10,20 @@ function Footer() {
     <main>
       <div className="sticky-footer">
         <div className="socialMedia">
-          <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
+          <InstagramIcon
+            onClick={() => window.open("https://www.instagram.com/", "_blank")}
+          />
+          <TwitterIcon
+            onClick={() => window.open("https://twitter.com/", "_blank")}
+          />
+          <FacebookIcon
+            onClick={() =>
+              window.open("https://www.facebook.com/Meta/", "_blank")
+            }
+          />
+          <LinkedInIcon
+            onClick={() => window.open("https://br.linkedin.com/", "_blank")}
+          />
         </div>
         <p> &copy; 2022 ludensplataform.com</p>
       </div>

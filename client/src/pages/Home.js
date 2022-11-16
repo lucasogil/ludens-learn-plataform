@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Home.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   let navigate = useNavigate();
@@ -18,13 +18,9 @@ function Home() {
           <div className="">
             <h1>Aprenda & Ensine em conjunto</h1>
             <p>Conheça nosso catalogo de cursos</p>
-            <a
-              href="/#"
-              className="btn btn-primary"
-              onClick={routeChangeCourses}
-            >
+            <button className="btn btn-primary" onClick={routeChangeCourses}>
               Acessar
-            </a>
+            </button>
           </div>
 
           <img
@@ -43,7 +39,7 @@ function Home() {
                 backgroundImage: `url("https://img.freepik.com/free-vector/flat-university-concept-background_23-2148187600.jpg")`,
               }}
             >
-              Cursos
+              <Link to="/courses">Cursos</Link>
             </div>
             <div
               className="card-projet w-30  bg-white"
@@ -51,7 +47,7 @@ function Home() {
                 backgroundImage: `url("https://img.freepik.com/free-vector/antigravity-mobile-phone-with-elements_23-2148297052.jpg")`,
               }}
             >
-              Feed Social
+              <Link to="/feed">Feed Social</Link>
             </div>
             <div
               className="card-projet w-30 bg-white"
@@ -59,23 +55,27 @@ function Home() {
                 backgroundImage: `url("https://img.freepik.com/free-vector/pensive-people-ask-questions-search-answers-online-vector-flat-illustration-faq-page-with-curious-puzzled-characters-laptop-question-marks-speech-bubbles_107791-9783.jpg")`,
               }}
             >
-              Saiba mais
+              <a href="#secao1"> Saiba mais </a>
             </div>
           </div>
         </div>
       </section>
-      <section class="p-5 bg-blank">
-        <div class="container">
-          <h2>Saiba mais</h2>
-          <div class="card-product-line">
-            <div class="p-4">
-              <h3>Uma forma colaborativa de aprender</h3>
-              <p>Lorem Ipsum</p>
-            </div>
+      <section className="p-5 bg-blank">
+        <div className="container">
+          <h2 id="secao1"> Saiba mais </h2>
+          <div className="card-product-line">
             <img
               src="https://img.freepik.com/free-photo/young-team-coworkers-working-project_273609-16165.jpg"
               alt="Banner-about-site"
             />
+            <div className="p-4">
+              <h3>Uma forma colaborativa de aprender</h3>
+              <p>
+                Ludens é uma plataforma colaborativa de expansão do ensino
+                online, aqui você tem a oportunidade de aprender e compartilhar
+                conhecimento.
+              </p>
+            </div>
           </div>
         </div>
       </section>

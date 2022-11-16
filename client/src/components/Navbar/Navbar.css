@@ -8,6 +8,13 @@
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar img {
+  width: 70px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
 .navbar .links {
   flex: 50%;
   height: 100%;
@@ -27,13 +34,18 @@
   width: 100px;
   height: 40px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 20px;
   background-color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .navbar h2 {
   text-align: right;
   margin-right: 10px;
+  margin-top: 5px;
   color: white;
   font-weight: lighter;
 }

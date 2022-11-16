@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
+import ClearIcon from "@mui/icons-material/Clear";
+import "../styles/Post.css";
 
 function Post() {
   let { id } = useParams();
@@ -97,8 +99,8 @@ function Post() {
 
   return (
     <div className="postPage">
-      <div className="leftSide">
-        <div className="post" id="individual">
+      <div className="postSpace">
+        <div className="postContainer" id="individual">
           <div
             className="title"
             onClick={() => {
@@ -120,42 +122,53 @@ function Post() {
             {postObject.postText}
           </div>
           <div className="infobar">
-            {postObject.username}{" "}
-            {authState.username === postObject.username && (
-              <button
-                onClick={() => {
-                  deletePost(postObject.id);
-                }}
-              >
-                {" "}
-                Delete{" "}
-              </button>
-            )}
+            <div className="usenamePost">{postObject.username} </div>
+            <div className="editPostContainer">
+              {authState.username === postObject.username && (
+                <button
+                  className="editPostButton"
+                  onClick={() => {
+                    deletePost(postObject.id);
+                  }}
+                >
+                  Editar \ Deletar
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
-      <div className="rightSide">
+      <div className="commentsSpace">
         <div className="addCommentContainer">
           <input
             type="text"
-            placeholder="Comment"
+            placeholder="Comentario..."
             value={newComment}
             autoComplete="off"
             onChange={(event) => {
               setNewComment(event.target.value);
             }}
           />
-          <button onClick={addComment}> Add Comment</button>
+          <button onClick={addComment}>Comentar</button>
         </div>
         <div className="listOfComments">
           {comments.map((comment, key) => {
             return (
               <div key={key} className="comment">
-                {comment.commentBody}
-                <label> Username: {comment.username} </label>
-                {authState.username === comment.username && (
-                  <button onClick={() => deleteComment(comment.id)}> X </button>
-                )}
+                <div className="commentBody">{comment.commentBody}</div>
+                <div className="commentOptContainer">
+                  <div className="commentUser">
+                    <strong>Usuario:</strong> {comment.username}
+                  </div>
+                  {authState.username === comment.username && (
+                    <div
+                      className="commentDelete"
+                      onClick={() => deleteComment(comment.id)}
+                    >
+                      <ClearIcon />
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

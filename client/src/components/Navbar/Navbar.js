@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../helpers/AuthContext";
 import { NavLink, useNavigate } from "react-router-dom";
+import Logo from "../../assets/ludens-logo.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -15,6 +16,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="links">
+        <img src={Logo} onClick={() => window.open("/", "_self")} />
         {!authState.status ? (
           <>
             <NavLink to="/login"> Login</NavLink>
@@ -22,9 +24,9 @@ function Navbar() {
           </>
         ) : (
           <>
-            <NavLink to="/">Home Page</NavLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/feed">Feed Social</NavLink>
-            <NavLink to="/createcourse"> Criar um Curso</NavLink>
+            <NavLink to="/courses">Cursos</NavLink>
             <NavLink to="/upload"> Upload</NavLink>
             <NavLink to="/dashboard"> Dashboard</NavLink>
           </>
@@ -32,7 +34,7 @@ function Navbar() {
       </div>
       <div className="loggedInContainer">
         <NavLink to={`/profile/${authState.id}`}>
-          <h2>{authState.username} </h2>
+          <h2>{authState.username}</h2>
         </NavLink>
         {authState.status && (
           <button onClick={routeChangeLogout}> Logout</button>

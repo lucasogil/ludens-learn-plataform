@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import "../styles/Feed.css";
 
 function Feed() {
   const [listOfPosts, setListOfPosts] = useState([]);
@@ -10,7 +12,7 @@ function Feed() {
 
   let navigate = useNavigate();
 
-  const routeChange = () => {
+  const routeChangeCreatePost = () => {
     let path = `/createpost`;
     navigate(path);
   };
@@ -72,8 +74,12 @@ function Feed() {
 
   return (
     <div>
-      <h1>Feed</h1>
-      <button onClick={routeChange}> Criar Post</button>
+      <h1 className="feedTitle">Feed</h1>
+      <div className="creatPostButton">
+        <div className="addPost" onClick={routeChangeCreatePost}>
+          <PostAddIcon />
+        </div>
+      </div>
       <div>
         {listOfPosts.map((value, key) => {
           return (

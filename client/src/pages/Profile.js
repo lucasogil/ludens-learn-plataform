@@ -54,7 +54,7 @@ function Profile() {
               </div>
               <div className="infobar">
                 <div className="profilename"> {value.username} </div>
-                <div>
+                <div className="buttons">
                   <ThumbUpAltIcon />
                   <label> {value.Likes.length}</label>
                 </div>

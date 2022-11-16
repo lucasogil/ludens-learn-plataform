@@ -7,9 +7,10 @@ import Navbar from "./components/Navbar/Navbar";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Home from "./pages/Home";
 import Feed from "./pages/Feed";
-import CreatePost from "./pages/CreatePost";
 import CreateCourse from "./pages/CreateCourse";
+import CourseCatalog from "./pages/CourseCatalog";
 import Post from "./pages/Post";
+import CreatePost from "./pages/CreatePost";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Logout from "./helpers/Logout";
@@ -53,8 +54,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/feed" element={<Feed />} />
-            <Route path="/createpost" element={<CreatePost />} />
             <Route path="/createcourse" element={<CreateCourse />} />
+            <Route path="/courses" element={<CourseCatalog />} />
+            <Route path="/createpost" element={<CreatePost />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />

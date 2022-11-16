@@ -1,0 +1,184 @@
+/* INDIVIDUAL POST */
+.postPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.postSpace {
+  flex: 100%;
+  display: flex;
+  place-items: left;
+  margin-left: 100px;
+}
+
+.postSpace .postContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  border: 1px solid lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.postContainer:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.postContainer .title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+  align-items: center;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.postContainer .body {
+  flex: 60%;
+  display: flex;
+  place-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.postContainer .infobar {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: lightslategray;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.infobar .profilename {
+  flex: 50%;
+}
+
+.commentsSpace {
+  flex: 100%;
+  display: flex;
+  place-items: left;
+  justify-content: flex-start;
+  margin-left: 100px;
+}
+
+.commentsSpace .addCommentContainer {
+  display: flex;
+  place-items: left;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.addCommentContainer button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightslategray;
+  color: white;
+  margin-top: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.addCommentContainer input {
+  width: 450px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid lightgray;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.commentsSpace .listOfComments {
+  flex: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listOfComments .comment {
+  width: 620px;
+  height: 120px;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.comment .commentBody {
+  display: flex;
+  height: 50px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.comment .commentOptContainer {
+  display: flex;
+  width: 570px;
+}
+
+.comment .commentOptContainer .commentUser {
+  display: flex;
+  width: 570px;
+}
+
+.comment .commentOptContainer .commentDelete {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#individual {
+  height: 300px;
+  width: 1200px;
+}
+
+#individual .title {
+  font-size: 30px;
+}
+
+#individual .infobar {
+  flex: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: grid;
+}
+
+#individual .infobar .usenamePost {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+}
+
+#individual .infobar .editPostContainer {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#individual .infobar .editPostContainer .editPostButton {
+  border-color: lightslategray;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+#individual .body {
+  font-size: 25px;
+}

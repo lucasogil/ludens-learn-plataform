@@ -24,7 +24,7 @@ function CreateCourse() {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        navigate(`/editCourse/${response.data.id}`); //aqui vai madar para a ediçao do Curso
+        navigate("/");
       });
   };
 
