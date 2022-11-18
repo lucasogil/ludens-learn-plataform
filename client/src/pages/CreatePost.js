@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import "../styles/CreatePost.css";
 
 function CreatePost() {
   const { authState } = useContext(AuthContext);
@@ -50,7 +51,7 @@ function CreatePost() {
             autoComplete="off"
             id="inputCreatePost"
             name="title"
-            placeholder="(Ex. Title...)"
+            placeholder="Titulo"
           />
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
@@ -58,7 +59,7 @@ function CreatePost() {
             autoComplete="off"
             id="inputCreatePost"
             name="postText"
-            placeholder="(Ex. Post...)"
+            placeholder="Texto"
           />
           <button type="submit"> Create Post</button>
         </Form>

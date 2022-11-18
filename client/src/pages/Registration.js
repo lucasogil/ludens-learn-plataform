@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import "../styles/Registration.css";
 
 function Registration() {
+  let navigate = useNavigate();
+
   const initialValues = {
     username: "",
     password: "",
@@ -18,34 +22,36 @@ function Registration() {
     axios.post("http://localhost:3001/api/users", data).then(() => {
       console.log(data);
     });
+    navigate("/login");
   };
 
   return (
     <div>
+      <h1>Cadastre-se</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formContainer">
-          <label>Username: </label>
+        <Form className="registrationContainer">
+          <label>Usuario</label>
           <ErrorMessage name="username" component="span" />
           <Field
             autoComplete="off"
-            id="inputCreatePost"
+            id="inputRegistration"
             name="username"
-            placeholder="(Ex. John...)"
+            placeholder=""
           />
-          <label>Password: </label>
+          <label>Senha</label>
           <ErrorMessage name="password" component="span" />
           <Field
             autoComplete="off"
             type="password"
-            id="inputCreatePost"
+            id="inputRegistration"
             name="password"
-            placeholder="Your Password..."
+            placeholder=""
           />
-          <button type="submit"> Register</button>
+          <button type="submit">Cadastrar</button>
         </Form>
       </Formik>
     </div>

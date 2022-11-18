@@ -1,0 +1,68 @@
+/* LOGIN */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.loginContainer #inputLogin {
+  outline: none;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid grey;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.loginContainer button {
+  margin-top: 15px;
+  height: 40px;
+  border: none;
+  background-color: #611e917b;
+  border-radius: 5px;
+  color: white;
+}
+
+.loginContainer button:hover {
+  cursor: pointer;
+  background-color: #280243eb;
+}
+
+span {
+  color: red;
+}
+
+a:link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:active {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+label {
+  color: black;
+}
