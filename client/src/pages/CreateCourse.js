@@ -24,7 +24,8 @@ function CreateCourse() {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        navigate(`/editCourse/${response.data.id}`); //aqui vai madar para a ediçao do Curso
+        console.log(response);
+        navigate(`/editcourse/${response.data.id}`); //aqui vai madar para a ediçao do Curso
       });
   };
 
@@ -43,45 +44,49 @@ function CreateCourse() {
 
   return (
     <div>
-      <h1>Criar Curso</h1>
+      <div className="createCourseTitlePage">
+        <h1>Criar Curso</h1>
+      </div>
       <div className="createCoursePage">
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmit}
           validationSchema={validationSchema}
         >
-          <Form className="formContainer">
+          <Form className="createCourseContainer">
             <label>Titulo: </label>
             <ErrorMessage name="title" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputCreateCourseTitle"
               name="title"
-              placeholder="(Ex. Titulo...)"
+              placeholder=""
             />
             <label>Descrição: </label>
             <ErrorMessage name="description" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputCreateCourseDescription"
               name="description"
-              placeholder="(Ex. Descrição...)"
+              placeholder=""
+              component="textarea"
+              rows="4"
             />
             <label>Nivel: </label>
             <ErrorMessage name="level" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputCreateCourseLevel"
               name="level"
-              placeholder="(Ex. Nivel...)"
+              placeholder=""
             />
             <label>Categoria: </label>
             <ErrorMessage name="category" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputCreateCourseCategory"
               name="category"
-              placeholder="(Ex. Categoria...)"
+              placeholder=""
             />
             <button type="submit"> Criar Curso</button>
           </Form>

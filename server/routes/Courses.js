@@ -9,12 +9,32 @@ router.get("/", validateToken, async (req, res) => {
   res.json(listOfCourses);
 });
 
+router.get("/byId/:id", async (req, res) => {
+  const id = req.params.id;
+  const course = await Courses.findByPk(id);
+  res.json(course);
+});
+
 router.post("/", validateToken, async (req, res) => {
   const course = req.body;
   course.instructorName = req.user.username;
   course.UserId = req.user.id;
-  await Courses.create(course);
-  res.json(course);
+  const newCourse = await Courses.create(course);
+  res.json(newCourse);
+});
+
+router.put("/editcourse", validateToken, async (req, res) => {
+  const courseUpdated = req.body;
+  await Courses.update(
+    {
+      title: courseUpdated.title,
+      description: courseUpdated.description,
+      level: courseUpdated.level,
+      category: courseUpdated.category,
+    },
+    { where: { id: courseUpdated.id } }
+  );
+  res.json("SUCCESS");
 });
 
 module.exports = router;

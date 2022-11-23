@@ -1,4 +1,5 @@
 /* INDIVIDUAL POST */
+
 .postPage {
   display: flex;
   flex-direction: column;
@@ -6,29 +7,32 @@
   height: 100%;
 }
 
-.postSpace {
+.postPage .postSpace {
   flex: 100%;
   display: flex;
   place-items: left;
   margin-left: 100px;
 }
 
-.postSpace .postContainer {
-  border-radius: 10px;
+.postPage .postSpace .postContainer {
+  width: 1200px;
+  height: 300px;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
-  border: 1px solid lightgray;
-  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  font-family: Roboto;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.postContainer:hover {
+.postPage .postSpace .postContainer:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
 
-.postContainer .title {
+.postPage .postSpace .postContainer .title {
+  font-size: 25px;
   flex: 20%;
   border-bottom: 1px solid lightgray;
   background-color: lightslategray;
@@ -41,28 +45,42 @@
   border-top-right-radius: 5px;
 }
 
-.postContainer .body {
+.postPage .postSpace .postContainer .body {
   flex: 60%;
   display: flex;
   place-content: flex-start;
   align-items: center;
   padding-left: 15px;
+  font-size: 25px;
 }
 
-.postContainer .infobar {
+.postPage .postSpace .postContainer .infobar {
   flex: 20%;
   border-top: 1px solid lightgray;
   display: flex;
+  flex-direction: grid;
   align-items: center;
   padding-left: 15px;
-  background-color: lightslategray;
+  background-color: white;
   color: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.infobar .profilename {
-  flex: 50%;
+.postPage .postSpace .infobar .profilename {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: #5f0f97bb;
+}
+
+.postPage .postSpace .infobar .editPostButton {
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #5f0f97bb;
+  color: white;
+  margin-right: 20px;
 }
 
 .commentsSpace {
@@ -141,43 +159,4 @@
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
-}
-
-#individual {
-  height: 300px;
-  width: 1200px;
-}
-
-#individual .title {
-  font-size: 30px;
-}
-
-#individual .infobar {
-  flex: 10%;
-  display: flex;
-  align-items: center;
-  flex-direction: grid;
-}
-
-#individual .infobar .usenamePost {
-  display: flex;
-  justify-content: flex-start;
-  font-size: 20px;
-}
-
-#individual .infobar .editPostContainer {
-  flex: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-#individual .infobar .editPostContainer .editPostButton {
-  border-color: lightslategray;
-  border-radius: 10px;
-  font-size: 15px;
-}
-
-#individual .body {
-  font-size: 25px;
 }

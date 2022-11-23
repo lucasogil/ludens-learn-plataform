@@ -14,14 +14,15 @@ function Registration() {
   };
 
   const validationSchema = Yup.object().shape({
-    username: Yup.string().min(3).max(15).required(),
-    password: Yup.string().min(4).max(20).required(),
+    username: Yup.string().min(3).max(15).required("Nome do usuario vazio!"),
+    password: Yup.string().min(4).max(20).required("Senha esta vazia!"),
   });
 
   const onSubmit = (data) => {
     axios.post("http://localhost:3001/api/users", data).then(() => {
       console.log(data);
     });
+    alert("Registro Realizado com Sucesso!");
     navigate("/login");
   };
 

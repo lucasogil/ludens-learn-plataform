@@ -15,14 +15,13 @@ class VideoPlayer extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/videoList/", {
+      .get("http://localhost:3001/api/videodetails/", {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((res) => {
         console.log(JSON.stringify(res));
         res.data.map((video) => {
-          console.log("props = " + JSON.stringify(this.props));
-          if (video.upload_title === this.props.params.videoTitle) {
+          if (video.ChapterId == this.props.id) {
             this.setState(
               {
                 loaded: true,

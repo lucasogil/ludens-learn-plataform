@@ -1,0 +1,102 @@
+/* CREATE COURSE PAGE CSS */
+
+.chapterFieldName {
+  color: black;
+}
+
+.chapterEditionSpace {
+  font-family: Roboto;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.editChapterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 78vw;
+  height: 300px;
+  padding: 20px;
+  color: white;
+  border: none;
+  background-color: white;
+}
+
+.editChapterContainer #inputEditCourseTitle {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editChapterContainer #inputEditCourseDescription {
+  width: 1000px;
+  height: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editChapterContainer button {
+  margin-top: 15px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color: #be98ed;
+  border-radius: 5px;
+  color: white;
+}
+
+.editChapterContainer button:hover {
+  cursor: pointer;
+  background-color: #8a49da;
+}
+
+span {
+  color: red;
+}
+
+a:link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:active {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-right: 10px;
+  color: black;
+  font-weight: lighter;
+}

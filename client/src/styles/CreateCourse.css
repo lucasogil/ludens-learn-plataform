@@ -1,36 +1,80 @@
 /* CREATE COURSE PAGE CSS */
+.createCourseTitlePage {
+  display: flex;
+  margin-top: 40px;
+  margin-left: 100px;
+  align-items: left;
+}
 
 .createCoursePage {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto;
   width: 100vw;
   height: 70vh;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  padding-left: 100px;
 }
-.formContainer {
+.createCoursePage .createCourseContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
+  width: 1250px;
   height: auto;
   padding: 20px;
-  border: 5px solid #181219;
-  border-radius: 5px;
+  color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.formContainer #inputCreateCourse {
+.createCourseContainer #inputCreateCourseTitle {
+  width: 400px;
   height: 40px;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
   padding-left: 10px;
   font-size: 20px;
 }
 
-.formContainer button {
+.createCourseContainer #inputCreateCourseDescription {
+  width: 1000px;
+  height: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.createCourseContainer #inputCreateCourseLevel {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.createCourseContainer #inputCreateCourseCategory {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.createCourseContainer button {
   margin-top: 15px;
+  width: 200px;
   height: 40px;
   border: none;
   background-color: #be98ed;
@@ -38,7 +82,7 @@
   color: white;
 }
 
-.formContainer button:hover {
+.createCourseContainer button:hover {
   cursor: pointer;
   background-color: #8a49da;
 }

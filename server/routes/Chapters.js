@@ -10,6 +10,12 @@ router.get("/:courseId", async (req, res) => {
   res.json(chapters);
 });
 
+router.get("/byId/:id", async (req, res) => {
+  const id = req.params.id;
+  const chapter = await Chapters.findByPk(id);
+  res.json(chapter);
+});
+
 router.post("/", validateToken, async (req, res) => {
   const chapter = req.body;
   const newChapter = await Chapters.create(chapter);

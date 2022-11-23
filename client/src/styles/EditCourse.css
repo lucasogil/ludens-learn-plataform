@@ -1,0 +1,201 @@
+/* CREATE COURSE PAGE CSS */
+
+.editCourseSpace {
+  font-family: Roboto;
+  width: 100vw;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  padding-left: 100px;
+}
+
+.editCourseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1250px;
+  height: auto;
+  padding: 20px;
+  color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.editCourseContainer #inputEditCourseTitle {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editCourseContainer #inputEditCourseDescription {
+  width: 1000px;
+  height: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editCourseContainer #inputEditCourseLevel {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editCourseContainer #inputEditCourseCategory {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.editCourseContainer button {
+  margin-top: 15px;
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color: #be98ed;
+  border-radius: 5px;
+  color: white;
+}
+
+.editCourseContainer button:hover {
+  cursor: pointer;
+  background-color: #8a49da;
+}
+
+span {
+  color: red;
+}
+
+a:link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+a:active {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin-right: 10px;
+  color: black;
+  font-weight: lighter;
+}
+
+.editChapterSpace {
+  padding-left: 100px;
+}
+
+.editChapterSpace .listOfChapters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listOfChapters .chapter {
+  width: 1250px;
+  height: 60px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: grid;
+  justify-content: left;
+  align-items: center;
+}
+
+.chapter .chapterCircle {
+  margin-left: 10px;
+}
+
+.chapter .chapterTitle {
+  display: flex;
+  color: black;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+  width: 2400px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.chapter .chapterOptContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  margin-right: 10px;
+  width: 625px;
+  background-color: white;
+}
+.chapter .chapterOptContainer .chapterEditButton {
+  color: black;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.chapter .chapterOptContainer .chapterDeleteButton {
+  color: black;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.addChapterContainer {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 100px;
+}
+
+.addChapterContainer button {
+  width: 450px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightslategray;
+  color: white;
+  margin-top: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.addChapterContainer input {
+  width: 450px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid lightgray;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

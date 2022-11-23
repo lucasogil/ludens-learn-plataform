@@ -25,6 +25,9 @@ app.use(bodyParser.json());
 //Course
 const courseRouter = require("./routes/Courses");
 app.use("/api/courses", courseRouter);
+//Chapter
+const chapterRouter = require("./routes/Chapters");
+app.use("/api/chapters", chapterRouter);
 //Post
 const postRouter = require("./routes/Posts");
 app.use("/api/posts", postRouter);
@@ -44,8 +47,8 @@ app.use("/api/upload", uploadRouter);
 const mediaFolderRouter = express.static("media/uploads");
 app.use("/api/videos", mediaFolderRouter);
 //VideosList
-const videoListRouter = require("./routes/VideoList");
-app.use("/api/videoList", videoListRouter);
+const videoDetailsRouter = require("./routes/VideoDetails");
+app.use("/api/videodetails", videoDetailsRouter);
 
 //MySQLModels
 const db = require("./models");

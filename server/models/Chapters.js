@@ -21,5 +21,11 @@ module.exports = (sequileze, DataTypes) => {
     }
   );
 
+  Chapters.associate = (models) => {
+    Chapters.hasOne(models.VideoDetails, {
+      onDelete: "cascade",
+    });
+  };
+
   return Chapters;
 };

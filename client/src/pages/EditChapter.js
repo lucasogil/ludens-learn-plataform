@@ -1,91 +1,88 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import Upload from "../components/Upload/Upload";
+import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-import "../styles/CreateCourse.css";
+import "../styles/EditChapter.css";
 
-function CreateCourse() {
-  const { authState } = useContext(AuthContext);
-
+function CreateCourse(props) {
+  let { id } = useParams();
   let navigate = useNavigate();
-
-  const initialValues = {
+  const { authState } = useContext(AuthContext);
+  const [chapterObject, setChapterObject] = useState({
+    id: "",
     title: "",
     description: "",
-    level: "",
-    category: "",
-  };
-
-  const onSubmit = (data) => {
-    axios
-      .post("http://localhost:3001/api/courses", data, {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
-      .then((response) => {
-        navigate("/editChapters"); //aqui vai madar para a ediçao de capitulo
-      });
-  };
+  });
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
+    } else {
+      axios
+        .get(`http://localhost:3001/api/chapters/byId/${id}`)
+        .then((response) => {
+          setChapterObject(response.data);
+        });
     }
   }, []);
+
+  const initialValues = {
+    id: chapterObject.id,
+    title: chapterObject.title,
+    description: chapterObject.description,
+  };
+
+  const saveChapterInfo = (data) => {
+    axios
+      .put("http://localhost:3001/api/courses/editcourse", data, {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
+      .then((response) => {
+        alert("Informações Salvas!");
+      });
+  };
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("You must input a Title!"),
     description: Yup.string().required(),
-    level: Yup.string().required(),
-    category: Yup.string().required(),
   });
 
   return (
     <div>
-      <h1>Criar Curso</h1>
-      <div className="createCoursePage">
+      <h1>Editar Capitulo</h1>
+      <div className="chapterEditionSpace">
         <Formik
           initialValues={initialValues}
-          onSubmit={onSubmit}
+          onSubmit={saveChapterInfo}
           validationSchema={validationSchema}
+          enableReinitialize={true}
         >
-          <Form className="formContainer">
-            <label>Titulo: </label>
+          <Form className="editChapterContainer">
+            <h4 className="chapterFieldName">Titulo: </h4>
             <ErrorMessage name="title" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputEditCourseTitle"
               name="title"
               placeholder="(Ex. Titulo...)"
             />
-            <label>Descrição: </label>
+            <h4 className="chapterFieldName">Descrição: </h4>
             <ErrorMessage name="description" component="span" />
             <Field
               autoComplete="off"
-              id="inputCreateCourse"
+              id="inputEditCourseDescription"
               name="description"
               placeholder="(Ex. Descrição...)"
+              component="textarea"
+              rows="2"
             />
-            <label>Nivel: </label>
-            <ErrorMessage name="level" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputCreateCourse"
-              name="level"
-              placeholder="(Ex. Nivel...)"
-            />
-            <label>Categoria: </label>
-            <ErrorMessage name="category" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputCreateCourse"
-              name="category"
-              placeholder="(Ex. Categoria...)"
-            />
-            <button type="submit"> Criar Curso</button>
+            <button type="submit"> Salvar </button>
           </Form>
         </Formik>
+        <Upload chapterObject={chapterObject} {...props} />
       </div>
     </div>
   );

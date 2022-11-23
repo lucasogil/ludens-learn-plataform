@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import "../styles/ChangePassword.css";
 
 function ChangePassword() {
   const initialValues = {
@@ -33,34 +34,38 @@ function ChangePassword() {
 
   return (
     <div>
-      <h1>Troca de Senha</h1>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        <Form className="formContainer">
-          <label>Senha Atual: </label>
-          <ErrorMessage name="oldPassword" component="span" />
-          <Field
-            name="oldPassword"
-            id="inputChangePassword"
-            type="password"
-            placeholder=""
-            autoComplete="off"
-          />
-          <label>Nova Senha: </label>
-          <ErrorMessage name="newPassword" component="span" />
-          <Field
-            name="newPassword"
-            type="password"
-            id="inputChangePassword"
-            placeholder=""
-            autoComplete="off"
-          />
-          <button type="submit"> Trocar Senha </button>
-        </Form>
-      </Formik>
+      <div className="changePassTitlePage">
+        <h1>Troca de Senha</h1>
+      </div>
+      <div className="changePassPage">
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          <Form className="changePassContainer">
+            <label>Senha Atual: </label>
+            <ErrorMessage name="oldPassword" component="span" />
+            <Field
+              name="oldPassword"
+              id="inputChangePassword"
+              type="password"
+              placeholder=""
+              autoComplete="off"
+            />
+            <label>Nova Senha: </label>
+            <ErrorMessage name="newPassword" component="span" />
+            <Field
+              name="newPassword"
+              type="password"
+              id="inputChangePassword"
+              placeholder=""
+              autoComplete="off"
+            />
+            <button type="submit"> Trocar Senha </button>
+          </Form>
+        </Formik>
+      </div>
     </div>
   );
 }

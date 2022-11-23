@@ -8,7 +8,7 @@ const ffmpegPath = "/usr/local/Cellar/ffmpeg/5.1.2/bin/ffmpeg"; //WindowsPath = 
 const width = 256;
 const height = 144;
 
-const generateThumbnail = (target, title, username) => {
+const generateThumbnail = (target, title, username, chapterId) => {
   title = title.replace(/.mov|.mpg|.mpeg|.mp4|.wmv|.avi/gi, "");
   let tmpFile = createWriteStream(
     "media/uploads/video_thumbnails/" + title + ".jpg"
@@ -31,7 +31,9 @@ const generateThumbnail = (target, title, username) => {
     "pipe:1",
   ]);
   ffmpeg.stdout.pipe(tmpFile);
+  console.log(chapterId);
   const videoDetails = new VideoDetails({
+    ChapterId: chapterId,
     uploader_name: username,
     upload_title: title,
     video_path: target,

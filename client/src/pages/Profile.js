@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
+import "../styles/Profile.css";
 
 function Profile() {
   let { id } = useParams();
@@ -27,41 +28,48 @@ function Profile() {
   }, []);
 
   return (
-    <div className="profilePageContainer">
-      <div className="basicInfo">
-        {" "}
-        <h1> Username: {username} </h1>
+    <div className="profilePage">
+      <div className="profileInfosContainer">
+        <div className="userLogedName">
+          <h1>{username}</h1>
+        </div>
         {authState.username === username && (
           <button
+            className="changeInfosButton"
             onClick={() => {
               navigate("/changepassword");
             }}
           >
-            Change My Password{" "}
+            Alterar Informações
           </button>
         )}
       </div>
-      <div className="listOfPosts">
-        {listOfPosts.map((value, key) => {
-          return (
-            <div key={key} className="post">
-              <div className="title"> {value.title} </div>
-              <div
-                className="body"
-                onClick={() => navigate(`/post/${value.id}`)}
-              >
-                {value.postText}
-              </div>
-              <div className="infobar">
-                <div className="profilename"> {value.username} </div>
-                <div className="buttons">
-                  <ThumbUpAltIcon />
-                  <label> {value.Likes.length}</label>
+      <div>
+        <div className="myPostsTitle">
+          <h4> Meus Posts </h4>
+        </div>
+        <div className="listOfPostsSpace">
+          {listOfPosts.map((value, key) => {
+            return (
+              <div key={key} className="post">
+                <div className="title"> {value.title} </div>
+                <div
+                  className="body"
+                  onClick={() => navigate(`/post/${value.id}`)}
+                >
+                  {value.postText}
+                </div>
+                <div className="infobar">
+                  <div className="profilename"> {value.username} </div>
+                  <div className="buttons">
+                    <ThumbUpAltIcon />
+                    <label> {value.Likes.length}</label>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

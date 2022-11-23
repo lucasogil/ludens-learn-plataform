@@ -1,0 +1,73 @@
+/* INDIVIDUAL COURSE */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  font-family: Roboto;
+}
+
+.videoChapterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.videoChapterContainer .videoChapterSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 70%;
+  height: 650px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.videoChapterContainer .videoChapterSpace:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.videoChapterContainer .videoChapterSpace .chapterInfoTitleName {
+  color: black;
+  width: 900px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.chapterInfosSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chapterInfosSpace .chapterInfosContainer {
+  width: 80%;
+  height: 130px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.chapterInfosSpace .chapterInfosContainer:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.chapterInfosSpace .chapterInfosContainer .chapterInfoDescription {
+  display: flex;
+  color: black;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 900px;
+  cursor: pointer;
+  background-color: white;
+}

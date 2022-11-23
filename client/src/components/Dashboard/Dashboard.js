@@ -13,7 +13,7 @@ function Dashboard() {
       navigate("/login");
     } else {
       axios
-        .get("http://localhost:3001/api/videoList/", {
+        .get("http://localhost:3001/api/videodetails/", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {

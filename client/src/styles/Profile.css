@@ -1,0 +1,148 @@
+/* PROFILE PAGE CSS */
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  width: 1400px;
+}
+
+.profileInfosContainer {
+  height: 150px;
+  color: black;
+  display: 50%;
+  background-color: white;
+}
+
+.profileInfosContainer .userLogedName {
+  display: flex;
+  margin-top: 20px;
+  align-items: left;
+}
+
+.profileInfosContainer .changeInfosButton {
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.myPostsTitle {
+  color: black;
+  display: flex;
+  align-items: flex-start;
+}
+
+.listOfPostsSpace {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  font-family: Roboto;
+}
+
+.listOfPostsSpace .post {
+  width: 500px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: none;
+  font-family: Roboto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.post .title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+  align-items: center;
+  color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.post .body {
+  flex: 60%;
+  display: grid;
+  margin-left: 7px;
+  place-content: center;
+}
+
+.post .infobar {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  color: #5f0f97bb;
+  background-color: white;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.infobar .profilename {
+  flex: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #5f0f97bb;
+}
+
+.infobar .buttons {
+  flex: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.likeBttn {
+  color: #7057837b;
+}
+.unlikeBttn {
+  color: #5f0f97bb;
+}
+
+.buttons label {
+  margin-right: 20px;
+  margin-left: 10px;
+  color: #611e917b;
+}
+
+.creatPostButton {
+  width: 500px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.creatPostButton .addPost {
+  width: 60px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightslategray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

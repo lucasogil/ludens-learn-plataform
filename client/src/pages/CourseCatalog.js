@@ -30,7 +30,7 @@ function CourseCatalog() {
   }, []);
 
   return (
-    <div className="coursePage">
+    <div className="courseCatalogPage">
       <h1 className="coursePageTitle">Cursos</h1>
       <div className="flex-container" onClick={routeChange}>
         <h6 className="flex-child">Criar Curso</h6>
@@ -39,7 +39,7 @@ function CourseCatalog() {
       <div>
         {listOfCourses.map((value, key) => {
           return (
-            <div key={key} className="courseContainer">
+            <div key={key} className="courseCatalogContainer">
               <div className="title"> {value.title} </div>
               <div
                 className="body"
@@ -52,11 +52,7 @@ function CourseCatalog() {
                 {value.level}
               </div>
               <div className="infobar">
-                <div className="profilename">
-                  <Link to={`/profile/${value.UserId}`}>
-                    {value.instructorName}
-                  </Link>
-                </div>
+                <Link className="profilename">{value.instructorName}</Link>
               </div>
             </div>
           );

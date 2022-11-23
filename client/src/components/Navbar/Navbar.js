@@ -27,7 +27,6 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/feed">Feed Social</NavLink>
             <NavLink to="/courses">Cursos</NavLink>
-            <NavLink to="/upload"> Upload</NavLink>
             <NavLink to="/dashboard"> Dashboard</NavLink>
           </>
         )}

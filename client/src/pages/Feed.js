@@ -73,8 +73,10 @@ function Feed() {
   };
 
   return (
-    <div>
-      <h1 className="feedTitle">Feed</h1>
+    <div className="feedPage">
+      <div className="feedTitle">
+        <h1>Feed</h1>
+      </div>
       <div className="creatPostButton">
         <div className="addPost" onClick={routeChangeCreatePost}>
           <PostAddIcon />
@@ -92,9 +94,9 @@ function Feed() {
                 {value.postText}
               </div>
               <div className="infobar">
-                <div className="profilename">
-                  <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
-                </div>
+                <Link className="profilename" to={`/profile/${value.UserId}`}>
+                  {value.username}
+                </Link>
                 <div className="buttons">
                   <ThumbUpAltIcon
                     onClick={() => {

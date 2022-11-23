@@ -17,6 +17,7 @@ function CreatePost() {
   };
 
   const onSubmit = (data) => {
+    console.log("data" + JSON.stringify(data));
     axios
       .post("http://localhost:3001/api/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
@@ -44,24 +45,24 @@ function CreatePost() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="formContainer">
-          <label>Title: </label>
+        <Form className="createPostContainer">
           <ErrorMessage name="title" component="span" />
           <Field
             autoComplete="off"
-            id="inputCreatePost"
+            id="inputCreatePostTitle"
             name="title"
             placeholder="Titulo"
           />
-          <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
             autoComplete="off"
-            id="inputCreatePost"
+            id="inputCreatePostText"
             name="postText"
             placeholder="Texto"
+            component="textarea"
+            rows="4"
           />
-          <button type="submit"> Create Post</button>
+          <button type="submit"> Postar </button>
         </Form>
       </Formik>
     </div>

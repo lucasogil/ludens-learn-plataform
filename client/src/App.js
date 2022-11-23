@@ -6,11 +6,15 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Home from "./pages/Home";
-import Feed from "./pages/Feed";
-import CreateCourse from "./pages/CreateCourse";
 import CourseCatalog from "./pages/CourseCatalog";
-import Post from "./pages/Post";
+import CreateCourse from "./pages/CreateCourse";
+import EditCourse from "./pages/EditCourse";
+import EditChapter from "./pages/EditChapter";
+import Course from "./pages/Course";
+import Chapter from "./pages/Chapter";
+import Feed from "./pages/Feed";
 import CreatePost from "./pages/CreatePost";
+import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Logout from "./helpers/Logout";
@@ -56,6 +60,10 @@ function App() {
             <Route path="/feed" element={<Feed />} />
             <Route path="/createcourse" element={<CreateCourse />} />
             <Route path="/courses" element={<CourseCatalog />} />
+            <Route path="/editcourse/:id" element={<EditCourse />} />
+            <Route path="/editchapter/:id" element={<EditChapter />} />
+            <Route path="/course/:id" element={<Course />} />
+            <Route path="/chapter/:id" element={<Chapter />} />
             <Route path="/createpost" element={<CreatePost />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/registration" element={<Registration />} />

@@ -100,7 +100,7 @@ function Post() {
   return (
     <div className="postPage">
       <div className="postSpace">
-        <div className="postContainer" id="individual">
+        <div className="postContainer">
           <div
             className="title"
             onClick={() => {
@@ -122,19 +122,17 @@ function Post() {
             {postObject.postText}
           </div>
           <div className="infobar">
-            <div className="usenamePost">{postObject.username} </div>
-            <div className="editPostContainer">
-              {authState.username === postObject.username && (
-                <button
-                  className="editPostButton"
-                  onClick={() => {
-                    deletePost(postObject.id);
-                  }}
-                >
-                  Editar \ Deletar
-                </button>
-              )}
-            </div>
+            <div className="profilename">{postObject.username} </div>
+            {authState.username === postObject.username && (
+              <button
+                className="editPostButton"
+                onClick={() => {
+                  deletePost(postObject.id);
+                }}
+              >
+                Deletar
+              </button>
+            )}
           </div>
         </div>
       </div>

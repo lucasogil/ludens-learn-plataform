@@ -1,4 +1,4 @@
-.coursePage {
+.courseCatalogPage {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -6,7 +6,7 @@
   margin-left: 200px;
 }
 
-.coursePage .coursePageTitle {
+.courseCatalogPage .coursePageTitle {
   height: 100px;
   color: black;
   display: flex;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.courseContainer {
+.courseCatalogPage .courseCatalogContainer {
   width: 1200px;
   height: 250px;
   border-radius: 5px;
@@ -24,19 +24,17 @@
   align-items: left;
   margin-top: 50px;
   border: 1px solid lightgray;
-  font-family: Arial, Helvetica, sans-serif;
-
+  font-family: Roboto;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.courseContainer:hover {
+.courseCatalogContainer:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
-.courseContainer .title {
+.courseCatalogContainer .title {
   flex: 20%;
-  border-bottom: 1px solid lightgray;
-  background-color: lightslategray;
+  background-color: #8a49da;
   display: flex;
   justify-content: flex-start;
   padding-left: 15px;
@@ -46,19 +44,19 @@
   border-top-right-radius: 5px;
 }
 
-.courseContainer .body {
+.courseCatalogContainer .body {
   flex: 60%;
   padding-left: 15px;
   align-items: center;
 }
 
-.courseContainer .infobar {
+.courseCatalogContainer .infobar {
   flex: 20%;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #be98ed;
   display: flex;
   align-items: center;
   padding-left: 15px;
-  background-color: lightslategray;
+  background-color: white;
   color: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -66,6 +64,7 @@
 
 .infobar .profilename {
   flex: 50%;
+  color: #8a49da;
 }
 
 .flex-container {

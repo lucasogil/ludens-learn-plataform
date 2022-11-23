@@ -29,5 +29,11 @@ module.exports = (sequileze, DataTypes) => {
     }
   );
 
+  Courses.associate = (models) => {
+    Courses.hasMany(models.Chapters, {
+      onDelete: "cascade",
+    });
+  };
+
   return Courses;
 };
