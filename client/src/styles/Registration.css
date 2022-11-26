@@ -1,6 +1,15 @@
 /* REGISTRATION PAGE CSS */
 
-.registrationContainer {
+.registrationPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.registrationPage .registrationContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,4 +74,13 @@ a:active {
 
 label {
   color: black;
+  display: inline;
+}
+
+.checkBoxInstructorContainer {
+  display: block;
+}
+
+.checkBoxInstructorButton {
+  margin-right: 5px;
 }

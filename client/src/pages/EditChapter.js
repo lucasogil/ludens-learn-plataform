@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Upload from "../components/Upload/Upload";
-import { Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import "../styles/EditChapter.css";
 
@@ -37,7 +37,7 @@ function CreateCourse(props) {
 
   const saveChapterInfo = (data) => {
     axios
-      .put("http://localhost:3001/api/courses/editcourse", data, {
+      .put("http://localhost:3001/api/chapters/editchapter", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

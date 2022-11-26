@@ -22,6 +22,18 @@ router.post("/", validateToken, async (req, res) => {
   res.json(newChapter);
 });
 
+router.put("/editchapter", validateToken, async (req, res) => {
+  const chapterUpdated = req.body;
+  await Chapters.update(
+    {
+      title: chapterUpdated.title,
+      description: chapterUpdated.description,
+    },
+    { where: { id: chapterUpdated.id } }
+  );
+  res.json("SUCCESS");
+});
+
 router.delete("/:chapterId", validateToken, async (req, res) => {
   const chapterId = req.params.chapterId;
 

@@ -7,11 +7,13 @@ const { sign } = require("jsonwebtoken");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 
 router.post("/", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, username, password, type } = req.body;
   bcrypt.hash(password, 10).then((hash) => {
     Users.create({
+      email: email,
       username: username,
       password: hash,
+      type: type,
     });
     res.json("SUCCESS");
   });
@@ -29,10 +31,15 @@ router.post("/login", async (req, res) => {
         res.json({ error: "Wrong Username And Password Combination" });
       else {
         const accessToken = sign(
-          { username: user.username, id: user.id },
+          { username: user.username, id: user.id, type: user.type },
           "importantsecret"
         );
-        res.json({ token: accessToken, username: username, id: user.id });
+        res.json({
+          token: accessToken,
+          username: username,
+          id: user.id,
+          type: user.type,
+        });
       }
     });
   }

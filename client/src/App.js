@@ -28,6 +28,7 @@ import axios from "axios";
 function App() {
   const [authState, setAuthState] = useState({
     username: "",
+    type: "",
     id: 0,
     status: false,
   });
@@ -41,8 +42,10 @@ function App() {
         if (response.data.error) {
           setAuthState({ ...authState, status: false });
         } else {
+          console.log(JSON.stringify(response.data));
           setAuthState({
             username: response.data.username,
+            type: response.data.type,
             id: response.data.id,
             status: true,
           });

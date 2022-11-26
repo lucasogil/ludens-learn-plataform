@@ -2,19 +2,21 @@
 .profilePage {
   display: flex;
   flex-direction: column;
+  height: 500px;
   margin-left: 100px;
   width: 1400px;
 }
 
-.profileInfosContainer {
-  height: 150px;
+.profilePage .profileInfosContainer {
+  height: 250px;
   color: black;
   display: 50%;
   background-color: white;
 }
 
-.profileInfosContainer .userLogedName {
+.profileInfosContainer .userInfos {
   display: flex;
+  flex-direction: column;
   margin-top: 20px;
   align-items: left;
 }

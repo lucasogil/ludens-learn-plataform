@@ -1,6 +1,15 @@
 /* LOGIN */
 
-.loginContainer {
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+}
+
+.loginPage .loginContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;

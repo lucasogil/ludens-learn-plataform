@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { AuthContext } from "../helpers/AuthContext";
 import "../styles/CourseCatalog.css";
 
 function CourseCatalog() {
   const [listOfCourses, setListOfCourses] = useState([]);
-
+  const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
   const routeChange = () => {
@@ -32,6 +33,7 @@ function CourseCatalog() {
   return (
     <div className="courseCatalogPage">
       <h1 className="coursePageTitle">Cursos</h1>
+      {}
       <div className="flex-container" onClick={routeChange}>
         <h6 className="flex-child">Criar Curso</h6>
         <OpenInNewIcon className="flex-child" />

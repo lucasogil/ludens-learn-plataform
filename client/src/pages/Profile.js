@@ -9,6 +9,8 @@ import "../styles/Profile.css";
 function Profile() {
   let { id } = useParams();
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [profileType, setProfileType] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
@@ -18,6 +20,8 @@ function Profile() {
       .get(`http://localhost:3001/api/users/basicInfo/${id}`)
       .then((response) => {
         setUsername(response.data.username);
+        setEmail(response.data.email);
+        setProfileType(response.data.type);
       });
 
     axios
@@ -30,8 +34,10 @@ function Profile() {
   return (
     <div className="profilePage">
       <div className="profileInfosContainer">
-        <div className="userLogedName">
+        <div className="userInfos">
           <h1>{username}</h1>
+          <h2>{email}</h2>
+          <h4>{profileType}</h4>
         </div>
         {authState.username === username && (
           <button

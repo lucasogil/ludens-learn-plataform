@@ -116,6 +116,7 @@ h1 {
 }
 
 .editChapterSpace {
+  padding-top: 100px;
   padding-left: 100px;
 }
 
@@ -176,7 +177,7 @@ h1 {
   display: flex;
   place-items: center;
   flex-direction: column;
-  margin-top: 15px;
+  padding-top: 10px;
   margin-left: 100px;
 }
 
