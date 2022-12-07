@@ -1,14 +1,18 @@
 /* CREATE POST PAGE CSS */
 .createPostPage {
   font-family: Roboto;
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to top, #90a4ae, #c1d5e0cd),
+    url(../assets/feed-banner.png) repeat top center;
 }
 
 .createPostPage .createPostContainer {
+  background-color: white;
   resize: horizontal;
   display: flex;
   flex-direction: column;
@@ -50,14 +54,14 @@
   width: 100px;
   height: 40px;
   border: none;
-  background-color: #611e917b;
+  background-color: #9370df;
   border-radius: 5px;
   color: white;
 }
 
 .createPostContainer button:hover {
   cursor: pointer;
-  background-color: #280243eb;
+  background-color: #2e1a7d;
 }
 
 span {

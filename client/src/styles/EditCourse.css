@@ -2,31 +2,33 @@
 
 .editCourseSpace {
   font-family: Roboto;
-  width: 100vw;
-  height: 65vh;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  padding-left: 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .editCourseContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1250px;
+  width: 70%;
   height: auto;
   padding: 20px;
-  color: white;
+  background-color: white;
   border: 1px solid lightgray;
   border-radius: 3px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .editCourseContainer #inputEditCourseTitle {
-  width: 400px;
-  height: 40px;
+  width: 100%;
+  height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid grey;
@@ -36,7 +38,7 @@
 }
 
 .editCourseContainer #inputEditCourseDescription {
-  width: 1000px;
+  width: 100%;
   height: 120px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -115,26 +117,23 @@ h1 {
   font-weight: lighter;
 }
 
-.editChapterSpace {
-  padding-top: 100px;
-  padding-left: 100px;
-}
-
-.editChapterSpace .listOfChapters {
+.editCourseSpace .listOfChapters {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .listOfChapters .chapter {
-  width: 1250px;
-  height: 60px;
+  width: 70vw;
+  height: auto;
   border: 1px solid lightgray;
   border-radius: 5px;
   margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: grid;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
@@ -148,7 +147,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  width: 2400px;
+  width: 50%;
   cursor: pointer;
   background-color: white;
 }
@@ -158,7 +157,7 @@ h1 {
   justify-content: flex-end;
   align-items: right;
   margin-right: 10px;
-  width: 625px;
+  width: 50%;
   background-color: white;
 }
 .chapter .chapterOptContainer .chapterEditButton {

@@ -1,6 +1,6 @@
-/* REGISTRATION PAGE CSS */
+/* LOGIN */
 
-.registrationPage {
+.forgotPassPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,10 +8,10 @@
   width: 100%;
   height: auto;
   padding-top: 20px;
-  padding-bottom: 300px;
+  padding-bottom: 400px;
 }
 
-.registrationPage .registrationContainer {
+.forgotPassPage .forgotPassContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.registrationContainer #inputRegistration {
+.forgotPassContainer #inputForgotPass {
   outline: none;
   height: 40px;
   margin-top: 10px;
@@ -35,18 +35,18 @@
   font-size: 20px;
 }
 
-.registrationContainer button {
+.forgotPassContainer button {
   margin-top: 15px;
   height: 40px;
   border: none;
-  background-color: #7d64fe;
+  background-color: darkgray;
   border-radius: 5px;
   color: white;
 }
 
-.registrationContainer button:hover {
+.forgotPassContainer button:hover {
   cursor: pointer;
-  background-color: #000e98;
+  background-color: lightslategrey;
 }
 
 span {
@@ -76,13 +76,4 @@ a:active {
 
 label {
   color: black;
-  display: inline;
-}
-
-.checkBoxInstructorContainer {
-  display: block;
-}
-
-.checkBoxInstructorButton {
-  margin-right: 5px;
 }

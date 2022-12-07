@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Upload from "./components/Upload/Upload";
 import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
+import NavbarSticky from "./components/Navbar/NavbarSticky";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import Home from "./pages/Home";
 import CourseCatalog from "./pages/CourseCatalog";
@@ -18,9 +18,10 @@ import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Logout from "./helpers/Logout";
-import PageNotFound from "./pages/PageNotFound";
 import Profile from "./pages/Profile";
 import ChangePassword from "./pages/ChangePassword";
+import ForgotPass from "./pages/ForgotPass";
+import PageNotFound from "./pages/PageNotFound";
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -57,7 +58,7 @@ function App() {
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
-          <Navbar />
+          <NavbarSticky />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/feed" element={<Feed />} />
@@ -74,6 +75,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/changepassword" element={<ChangePassword />} />
+            <Route path="/forgotpass" element={<ForgotPass />} />
             <Route path="/upload" element={<Upload />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/video/:videoTitle" element={<VideoPlayer />} />

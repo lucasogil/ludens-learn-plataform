@@ -18,6 +18,8 @@ function Feed() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
     } else {
@@ -73,47 +75,56 @@ function Feed() {
   };
 
   return (
-    <div className="feedPage">
-      <div className="feedTitle">
-        <h1>Feed</h1>
-      </div>
-      <div className="creatPostButton">
-        <div className="addPost" onClick={routeChangeCreatePost}>
-          <PostAddIcon />
+    <main>
+      <div className="backgroundContainer">
+        <div className="feedPage">
+          <div className="feedPageTitle">
+            <h1>Feed Social</h1>
+          </div>
+          <div className="creatPostContainer">
+            <div className="addPostButton" onClick={routeChangeCreatePost}>
+              <PostAddIcon />
+            </div>
+          </div>
+          <div>
+            {listOfPosts.map((value, key) => {
+              return (
+                <div key={key} className="post">
+                  <div className="titlePostCard"> {value.title} </div>
+                  <div
+                    className="bodyPostCard"
+                    onClick={() => navigate(`/post/${value.id}`)}
+                  >
+                    <text>{value.postText}</text>
+                  </div>
+                  <div className="infobar">
+                    <Link
+                      className="profilenamePostCard"
+                      to={`/profile/${value.UserId}`}
+                    >
+                      {value.username}
+                    </Link>
+                    <div className="buttonsPost">
+                      <ThumbUpAltIcon
+                        onClick={() => {
+                          likeAPost(value.id);
+                        }}
+                        className={
+                          likedPosts.includes(value.id)
+                            ? "unlikeBttnPost"
+                            : "likeBttnPost"
+                        }
+                      />
+                      <label> {value.Likes.length}</label>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-      <div>
-        {listOfPosts.map((value, key) => {
-          return (
-            <div key={key} className="post">
-              <div className="title"> {value.title} </div>
-              <div
-                className="body"
-                onClick={() => navigate(`/post/${value.id}`)}
-              >
-                {value.postText}
-              </div>
-              <div className="infobar">
-                <Link className="profilename" to={`/profile/${value.UserId}`}>
-                  {value.username}
-                </Link>
-                <div className="buttons">
-                  <ThumbUpAltIcon
-                    onClick={() => {
-                      likeAPost(value.id);
-                    }}
-                    className={
-                      likedPosts.includes(value.id) ? "unlikeBttn" : "likeBttn"
-                    }
-                  />
-                  <label> {value.Likes.length}</label>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    </main>
   );
 }
 

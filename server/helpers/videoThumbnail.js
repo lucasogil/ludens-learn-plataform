@@ -4,9 +4,10 @@ const { createWriteStream } = require("fs");
 const { VideoDetails } = require("../models");
 const port = require("../config/default").port;
 
-//WindowsPath = E:/softwares/ffmpeg/bin/ffmpeg.exe
-//MacOsPath = /usr/local/Cellar/ffmpeg/5.1.2/bin/ffmpeg"
-const ffmpegPath = "E:/softwares/ffmpeg/bin/ffmpeg.exe";
+//WindowsPath
+//const ffmpegPath = "E:/softwares/ffmpeg/bin/ffmpeg.exe";
+//MacOsPath
+const ffmpegPath = "/usr/local/Cellar/ffmpeg/5.1.2/bin/ffmpeg";
 const width = 256;
 const height = 144;
 

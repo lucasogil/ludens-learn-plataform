@@ -40,31 +40,33 @@ function CreatePost() {
 
   return (
     <div className="createPostPage">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        <Form className="createPostContainer">
-          <ErrorMessage name="title" component="span" />
-          <Field
-            autoComplete="off"
-            id="inputCreatePostTitle"
-            name="title"
-            placeholder="Titulo"
-          />
-          <ErrorMessage name="postText" component="span" />
-          <Field
-            autoComplete="off"
-            id="inputCreatePostText"
-            name="postText"
-            placeholder="Texto"
-            component="textarea"
-            rows="4"
-          />
-          <button type="submit"> Postar </button>
-        </Form>
-      </Formik>
+      <div>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          <Form className="createPostContainer">
+            <ErrorMessage name="title" component="span" />
+            <Field
+              autoComplete="off"
+              id="inputCreatePostTitle"
+              name="title"
+              placeholder="Titulo"
+            />
+            <ErrorMessage name="postText" component="span" />
+            <Field
+              autoComplete="off"
+              id="inputCreatePostText"
+              name="postText"
+              placeholder="Texto"
+              component="textarea"
+              rows="4"
+            />
+            <button type="submit"> Postar </button>
+          </Form>
+        </Formik>
+      </div>
     </div>
   );
 }

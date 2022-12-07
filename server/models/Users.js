@@ -37,6 +37,10 @@ module.exports = (sequileze, DataTypes) => {
     Users.hasMany(models.Courses, {
       onDelete: "cascade",
     });
+
+    Users.hasMany(models.Matriculations, {
+      onDelete: "cascade",
+    });
   };
 
   return Users;

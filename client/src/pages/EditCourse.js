@@ -9,7 +9,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { AuthContext } from "../helpers/AuthContext";
 import "../styles/EditCourse.css";
 
-function CreateCourse() {
+function EditCourse() {
   let { id } = useParams();
   let navigate = useNavigate();
   const [courseObject, setCourseObject] = useState({
@@ -110,89 +110,85 @@ function CreateCourse() {
   };
 
   return (
-    <div>
+    <div className="editCourseSpace">
       <h1>Editar Curso</h1>
-      <div className="editCourseSpace">
-        <Formik
-          initialValues={initialValues}
-          onSubmit={saveCourseInfo}
-          validationSchema={validationSchema}
-          enableReinitialize={true}
-        >
-          <Form className="editCourseContainer">
-            <label>Titulo: </label>
-            <ErrorMessage name="title" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputEditCourseTitle"
-              name="title"
-              placeholder="(Ex. Titulo...)"
-            />
-            <label>Descrição: </label>
-            <ErrorMessage name="description" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputEditCourseDescription"
-              name="description"
-              placeholder="(Ex. Descrição...)"
-              component="textarea"
-              rows="4"
-            />
-            <label>Nivel: </label>
-            <ErrorMessage name="level" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputEditCourseLevel"
-              name="level"
-              placeholder="(Ex. Nivel...)"
-            />
-            <label>Categoria: </label>
-            <ErrorMessage name="category" component="span" />
-            <Field
-              autoComplete="off"
-              id="inputEditCourseCategory"
-              name="category"
-              placeholder="(Ex. Categoria...)"
-            />
-            <button type="submit"> Salvar Informações </button>
-          </Form>
-        </Formik>
-      </div>
-      <div className="editChapterSpace">
-        <div className="listOfChapters">
-          {chapters.map((chapter, key) => {
-            console.log(chapters);
-            return (
-              <div key={key} className="chapter">
-                <CircleIcon className="chapterCircle" />
-                <div
-                  className="chapterTitle"
-                  onClick={() => navigate(`/chapter/${chapter.id}`)}
-                >
-                  {chapter.title}
-                </div>
-                {authState.username === courseObject.instructorName && (
-                  <div className="chapterOptContainer">
-                    <div
-                      className="chapterEditButton"
-                      onClick={() => navigate(`/editchapter/${chapter.id}`)}
-                    >
-                      Editar
-                      <EditIcon />
-                    </div>
-                    <div
-                      className="chapterDeleteButton"
-                      onClick={() => deleteChapter(chapter.id)}
-                    >
-                      Deletar
-                      <ClearIcon />
-                    </div>
-                  </div>
-                )}
+      <Formik
+        initialValues={initialValues}
+        onSubmit={saveCourseInfo}
+        validationSchema={validationSchema}
+        enableReinitialize={true}
+      >
+        <Form className="editCourseContainer">
+          <label>Titulo: </label>
+          <ErrorMessage name="title" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputEditCourseTitle"
+            name="title"
+            placeholder="(Ex. Titulo...)"
+          />
+          <label>Descrição: </label>
+          <ErrorMessage name="description" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputEditCourseDescription"
+            name="description"
+            placeholder="(Ex. Descrição...)"
+            component="textarea"
+            rows="4"
+          />
+          <label>Nivel: </label>
+          <ErrorMessage name="level" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputEditCourseLevel"
+            name="level"
+            placeholder="(Ex. Nivel...)"
+          />
+          <label>Categoria: </label>
+          <ErrorMessage name="category" component="span" />
+          <Field
+            autoComplete="off"
+            id="inputEditCourseCategory"
+            name="category"
+            placeholder="(Ex. Categoria...)"
+          />
+          <button type="submit"> Salvar Informações </button>
+        </Form>
+      </Formik>
+      <div className="listOfChapters">
+        {chapters.map((chapter, key) => {
+          console.log(chapters);
+          return (
+            <div key={key} className="chapter">
+              <CircleIcon className="chapterCircle" />
+              <div
+                className="chapterTitle"
+                onClick={() => navigate(`/chapter/${chapter.id}`)}
+              >
+                {chapter.title}
               </div>
-            );
-          })}
-        </div>
+              {authState.username === courseObject.instructorName && (
+                <div className="chapterOptContainer">
+                  <div
+                    className="chapterEditButton"
+                    onClick={() => navigate(`/editchapter/${chapter.id}`)}
+                  >
+                    Editar
+                    <EditIcon />
+                  </div>
+                  <div
+                    className="chapterDeleteButton"
+                    onClick={() => deleteChapter(chapter.id)}
+                  >
+                    Deletar
+                    <ClearIcon />
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
       <div className="addChapterContainer">
         <input
@@ -210,4 +206,4 @@ function CreateCourse() {
   );
 }
 
-export default CreateCourse;
+export default EditCourse;

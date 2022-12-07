@@ -1,5 +1,6 @@
 .uploadVideoContainer {
   background-color: white;
+  width: 70% !important;
   margin-bottom: 30px;
 }
 
@@ -13,7 +14,7 @@
   -webkit-transition: outline-offset 0.15s ease-in-out,
     background-color 0.15s linear;
   transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
-  padding: 120px 0px 85px 35%;
+  padding: 60px 0px 65px 20%;
   text-align: center !important;
   margin: 0;
   width: 100% !important;

@@ -61,7 +61,7 @@ class VideoPlayer extends React.Component {
     if (!localStorage.getItem("accessToken"))
       return this.props.navigate("/login");
     return (
-      <div className="row" style={{ width: "100vw" }}>
+      <div className="row" style={{ width: "80vw" }}>
         <div className="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto mt-5">
           {this.state.loaded ? (
             <div data-vjs-player>

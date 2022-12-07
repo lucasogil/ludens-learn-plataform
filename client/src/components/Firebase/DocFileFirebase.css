@@ -1,0 +1,41 @@
+.docUploadComponetSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.docUploadComponetSpace button {
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightslategray;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.docUploadComponetSpace input {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.docUploadComponetSpace a:link {
+  color: blue;
+}
+
+.docUploadComponetSpace a:visited {
+  color: purple;
+}
+
+.docUploadComponetSpace a:hover {
+  color: black;
+}
+
+.docUploadComponetSpace a:active {
+  color: black;
+}

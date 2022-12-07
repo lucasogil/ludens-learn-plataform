@@ -33,6 +33,10 @@ module.exports = (sequileze, DataTypes) => {
     Courses.hasMany(models.Chapters, {
       onDelete: "cascade",
     });
+
+    Courses.hasMany(models.Matriculations, {
+      onDelete: "cascade",
+    });
   };
 
   return Courses;

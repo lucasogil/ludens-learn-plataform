@@ -12,10 +12,13 @@ function Profile() {
   const [email, setEmail] = useState("");
   const [profileType, setProfileType] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
+  const [listOfCourses, setListOfCourses] = useState([]);
   const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     axios
       .get(`http://localhost:3001/api/users/basicInfo/${id}`)
       .then((response) => {
@@ -25,11 +28,19 @@ function Profile() {
       });
 
     axios
+      .get(`http://localhost:3001/api/courses/byUserId/${id}`, {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
+      .then((response) => {
+        setListOfCourses(response.data);
+      });
+
+    axios
       .get(`http://localhost:3001/api/posts/byUserId/${id}`)
       .then((response) => {
         setListOfPosts(response.data);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="profilePage">
@@ -52,7 +63,7 @@ function Profile() {
       </div>
       <div>
         <div className="myPostsTitle">
-          <h4> Meus Posts </h4>
+          <h4> Posts </h4>
         </div>
         <div className="listOfPostsSpace">
           {listOfPosts.map((value, key) => {

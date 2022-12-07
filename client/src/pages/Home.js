@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Home.css";
 import { Link, useNavigate } from "react-router-dom";
+import Banner from "../assets/ludens-banner.png";
 
 function Home() {
   let navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const routeChangeCourses = () => {
     let path = `/courses`;
@@ -15,46 +20,29 @@ function Home() {
       {" "}
       <section id="hero" className=" py-5 ">
         <div className="container d-flex justify-content-between align-items-center">
-          <div className="">
-            <h1>Aprenda & Ensine em conjunto</h1>
+          <img className="img-hero" src={Banner} alt="Banner-home-page" />
+          <div className="bannerInfo">
+            <h1>
+              <strong>LUDENS</strong>
+            </h1>
+            <h1>Plataforma de Ensino Online</h1>
             <p>Conheça nosso catalogo de cursos</p>
             <button className="btn btn-primary" onClick={routeChangeCourses}>
               Acessar
             </button>
           </div>
-
-          <img
-            className="img-hero"
-            src="https://img.freepik.com/free-vector/customer-support-flat-illustration_23-2148892786.jpg"
-            alt="Banner-home-page"
-          />
         </div>
       </section>
       <section className="p-5 bg-gray">
         <div className="container">
           <div className="d-flex justify-content-between mt-4">
-            <div
-              className="card-projet  bg-white"
-              style={{
-                backgroundImage: `url("https://img.freepik.com/free-vector/flat-university-concept-background_23-2148187600.jpg")`,
-              }}
-            >
+            <div className="card-projet" id="img1">
               <Link to="/courses">Cursos</Link>
             </div>
-            <div
-              className="card-projet w-30  bg-white"
-              style={{
-                backgroundImage: `url("https://img.freepik.com/free-vector/antigravity-mobile-phone-with-elements_23-2148297052.jpg")`,
-              }}
-            >
+            <div className="card-projet w-30" id="img2">
               <Link to="/feed">Feed Social</Link>
             </div>
-            <div
-              className="card-projet w-30 bg-white"
-              style={{
-                backgroundImage: `url("https://img.freepik.com/free-vector/pensive-people-ask-questions-search-answers-online-vector-flat-illustration-faq-page-with-curious-puzzled-characters-laptop-question-marks-speech-bubbles_107791-9783.jpg")`,
-              }}
-            >
+            <div className="card-projet w-30" id="img3">
               <a href="#secao1"> Saiba mais </a>
             </div>
           </div>
@@ -71,9 +59,9 @@ function Home() {
             <div className="p-4">
               <h3>Uma forma colaborativa de aprender</h3>
               <p>
-                Ludens é uma plataforma colaborativa de expansão do ensino
-                online, aqui você tem a oportunidade de aprender e compartilhar
-                conhecimento.
+                Aprenda e ensine em conjunto Ludens é uma plataforma
+                colaborativa de expansão do ensino online, aqui você tem a
+                oportunidade de aprender e compartilhar conhecimento.
               </p>
             </div>
           </div>

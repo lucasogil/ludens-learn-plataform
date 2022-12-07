@@ -1,27 +1,61 @@
 /* FEED PAGE CSS */
-.feedTitle {
-  height: 100px;
-  color: black;
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, #90a4ae, #c1d5e0cd),
+    url(../assets/feed-banner.png) repeat top center;
+}
+
+.backgroundContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .feedPage {
   font-family: Roboto;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
+  background-color: #90a4ae;
+  border: 1px solid #90a4ae;
+  border-radius: 3px;
+}
+
+.feedPage .feedPageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to right, #90a4aeea, #c1d5e072),
+    url(../assets/social-media-icons.png) repeat center center;
+  background-size: cover;
+}
+
+.feedPageTitle h1 {
+  color: white;
 }
 
 .feedPage .post {
-  width: 500px;
+  width: 100%;
   height: 200px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 30px;
   border: none;
   font-family: Roboto;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -31,24 +65,26 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
-.post .title {
+.post .titlePostCard {
   flex: 20%;
-  border-bottom: 1px solid lightgray;
-  background-color: lightslategray;
+  border-bottom: 1px solid #7d64fe;
+  background-color: #7d64fe;
   display: flex;
   justify-content: flex-start;
-  padding-left: 15px;
   align-items: center;
   color: white;
+  padding-left: 10px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
-.post .body {
+.post .bodyPostCard {
   flex: 60%;
-  display: grid;
-  margin-left: 7px;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
 }
 
 .post .infobar {
@@ -56,59 +92,57 @@
   border-top: 1px solid lightgray;
   display: flex;
   align-items: center;
-  padding-left: 15px;
   color: black;
   background-color: white;
   border-bottom-left-radius: 1px;
   border-bottom-right-radius: 1px;
 }
 
-.infobar .profilename {
+.infobar .profilenamePostCard {
   flex: 50%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #5f0f97bb;
+  color: #7d64fe;
 }
 
-.infobar .buttons {
+.infobar .buttonsPost {
   flex: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.likeBttn {
-  color: #7057837b;
+.likeBttnPost {
+  color: #9370df;
 }
-.unlikeBttn {
-  color: #5f0f97bb;
+.unlikeBttnPost {
+  color: #2e1a7d;
 }
 
-.buttons label {
+.buttonsPost label {
   margin-right: 20px;
   margin-left: 10px;
-  color: #611e917b;
+  color: #4338ca;
 }
 
-.creatPostButton {
+.creatPostContainer {
   width: 500px;
-  height: 40px;
   cursor: pointer;
-  margin-right: 10px;
   color: white;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: left;
+  margin-top: 30px;
 }
 
-.creatPostButton .addPost {
+.creatPostContainer .addPostButton {
   width: 60px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightslategray;
+  background-color: #7d64fe;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;

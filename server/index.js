@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+//EJS
+app.use(express.static("./public"));
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(express.urlencoded({ extended: false }));
+
 // It ensures that we prevent Cross-Origin Resource Sharing(CORS) errors
 // If client made req on localhost:4000, and received res from server which
 // has localhost:3000 req will fail. It is always the case with RESTful APIs
@@ -25,6 +31,9 @@ app.use(bodyParser.json());
 //Course
 const courseRouter = require("./routes/Courses");
 app.use("/api/courses", courseRouter);
+//Matriculations
+const matriculationRouter = require("./routes/Matriculations");
+app.use("/api/matriculations", matriculationRouter);
 //Chapter
 const chapterRouter = require("./routes/Chapters");
 app.use("/api/chapters", chapterRouter);
@@ -46,9 +55,12 @@ app.use("/api/upload", uploadRouter);
 //MediaFolder
 const mediaFolderRouter = express.static("media/uploads");
 app.use("/api/videos", mediaFolderRouter);
-//VideosList
+//VideoDetails
 const videoDetailsRouter = require("./routes/VideoDetails");
 app.use("/api/videodetails", videoDetailsRouter);
+//Documents
+const documentsRouter = require("./routes/Documents");
+app.use("/api/documents", documentsRouter);
 
 //MySQLModels
 const db = require("./models");

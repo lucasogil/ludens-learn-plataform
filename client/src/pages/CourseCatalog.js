@@ -6,6 +6,8 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { AuthContext } from "../helpers/AuthContext";
 import "../styles/CourseCatalog.css";
 
+const _INSTRUTOR = "INSTRUTOR";
+
 function CourseCatalog() {
   const [listOfCourses, setListOfCourses] = useState([]);
   const { authState } = useContext(AuthContext);
@@ -20,23 +22,43 @@ function CourseCatalog() {
     if (!localStorage.getItem("accessToken")) {
       navigate("/login");
     } else {
-      axios
-        .get("http://localhost:3001/api/courses", {
-          headers: { accessToken: localStorage.getItem("accessToken") },
-        })
-        .then((response) => {
-          setListOfCourses(response.data);
-        });
+      if (authState.type === _INSTRUTOR) {
+        axios
+          .get(`http://localhost:3001/api/courses/byUserId/${authState.id}`, {
+            headers: { accessToken: localStorage.getItem("accessToken") },
+          })
+          .then((response) => {
+            setListOfCourses(response.data);
+          });
+        console.log("professor");
+      } else {
+        axios
+          .get("http://localhost:3001/api/courses/", {
+            headers: { accessToken: localStorage.getItem("accessToken") },
+          })
+          .then((response) => {
+            setListOfCourses(response.data);
+          });
+        console.log("aluno");
+      }
+      console.log("authState.type = " + authState.type);
     }
-  }, []);
+  }, [authState.type]);
 
   return (
     <div className="courseCatalogPage">
-      <h1 className="coursePageTitle">Cursos</h1>
-      {}
-      <div className="flex-container" onClick={routeChange}>
-        <h6 className="flex-child">Criar Curso</h6>
-        <OpenInNewIcon className="flex-child" />
+      {authState.type === _INSTRUTOR ? (
+        <h1 className="coursePageTitle">Meus Cursos</h1>
+      ) : (
+        <h1 className="coursePageTitle">Catalogo de Cursos</h1>
+      )}
+      <div>
+        {authState.type === _INSTRUTOR && (
+          <div className="flex-container" onClick={routeChange}>
+            <h6 className="flex-child">Criar Curso</h6>
+            <OpenInNewIcon className="flex-child" />
+          </div>
+        )}
       </div>
       <div>
         {listOfCourses.map((value, key) => {

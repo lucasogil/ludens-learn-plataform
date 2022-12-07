@@ -1,5 +1,12 @@
 .img-hero {
-  height: 50vh;
+  height: 45vh;
+  margin-right: 40px;
+}
+
+.bannerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .bg-gray {
@@ -8,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightslategray;
+  background-color: #c1d5e0;
 }
 
 .bg-blank {
@@ -27,8 +34,29 @@
   background-position: center;
   color: white;
   padding-top: 40px;
-  text-shadow: 1px 1px 1px #864d4d, -1px -1px 7px black;
+  text-shadow: 1px 1px 1px #90a4ae, -1px -1px 7px black;
   font-size: 30px;
+}
+
+#img1 {
+  background: linear-gradient(to top, #000f98cb, #7e64fec5),
+    url(https://img.freepik.com/vetores-gratis/ilustracao-em-vetor-conceito-abstrato-de-plataforma-escolar-online-ensino-em-casa-em-covid2019-plataforma-de-educacao-online-qarantine-aulas-digitais-cursos-virtuais-lms-para-metafora-abstrata-escolar_335657-5850.jpg)
+      no-repeat top center;
+  background-size: cover;
+}
+
+#img2 {
+  background: linear-gradient(to top, #000f98cb, #7e64fec5),
+    url(https://img.freepik.com/vetores-gratis/fique-em-casa-ilustracao-vetorial-de-conceito-abstrato-isolamento-forcado-medidas-de-prevencao-de-surtos-covid19-distancia-social-apoio-governamental-autoprotecao-usar-mascara-abstrata-metafora_335657-6164.jpg)
+      no-repeat top center;
+  background-size: cover;
+}
+
+#img3 {
+  background: linear-gradient(to top, #000f98cb, #7e64fec5),
+    url(https://img.freepik.com/vetores-gratis/geografia-conceito-abstrato-ilustracao-vetorial-geografia-mundial-campo-humano-e-fisico-terra-estudo-grau-universitario-sistema-de-informacao-geografica-cartografia-tipografia-metafora-abstrata_335657-6336.jpg)
+      no-repeat top center;
+  background-size: cover;
 }
 
 .card-product {
@@ -45,16 +73,22 @@
 .card-product-line {
   display: flex;
   background-color: white;
+  color: white;
   justify-content: space-between;
   align-items: center;
   border-radius: 2px;
   margin: 22px 0px;
+  background: linear-gradient(to top, #000e98, #7d64fe) no-repeat top center;
 }
 
 .card-product-line img {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 1px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#secao1 {
+  color: #4338ca;
 }

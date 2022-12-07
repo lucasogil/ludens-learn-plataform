@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 import "../styles/CreateCourse.css";
 
+const _INSTRUTOR = "INSTRUTOR";
+
 function CreateCourse() {
   const { authState } = useContext(AuthContext);
 
@@ -18,6 +20,14 @@ function CreateCourse() {
     category: "",
   };
 
+  useEffect(() => {
+    if (!localStorage.getItem("accessToken")) {
+      navigate("/login");
+    } else if (authState.type !== _INSTRUTOR) {
+      navigate("/");
+    }
+  }, [authState.type]);
+
   const onSubmit = (data) => {
     axios
       .post("http://localhost:3001/api/courses", data, {
@@ -28,12 +38,6 @@ function CreateCourse() {
         navigate(`/editcourse/${response.data.id}`); //aqui vai madar para a ediçao do Curso
       });
   };
-
-  useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
-      navigate("/login");
-    }
-  }, []);
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required("You must input a Title!"),

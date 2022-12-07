@@ -1,7 +1,7 @@
 const { application } = require("express");
 const express = require("express");
 const router = express.Router();
-const { Courses } = require("../models");
+const { Courses, Matriculations } = require("../models");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 
 router.get("/", validateToken, async (req, res) => {
@@ -11,8 +11,16 @@ router.get("/", validateToken, async (req, res) => {
 
 router.get("/byId/:id", async (req, res) => {
   const id = req.params.id;
-  const course = await Courses.findByPk(id);
+  const course = await Courses.findByPk(id, { include: [Matriculations] });
   res.json(course);
+});
+
+router.get("/byUserId/:id", async (req, res) => {
+  const id = req.params.id;
+  const listOfCourses = await Courses.findAll({
+    where: { UserId: id },
+  });
+  res.json(listOfCourses);
 });
 
 router.post("/", validateToken, async (req, res) => {

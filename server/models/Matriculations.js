@@ -1,6 +1,6 @@
 module.exports = (sequileze, DataTypes) => {
-  const Enrollments = sequileze.define(
-    "Enrollments",
+  const Matriculations = sequileze.define(
+    "Matriculations",
     {},
     {
       // don't add the timestamp attributes (updatedAt, createdAt)
@@ -8,5 +8,5 @@ module.exports = (sequileze, DataTypes) => {
     }
   );
 
-  return Enrollments;
+  return Matriculations;
 };

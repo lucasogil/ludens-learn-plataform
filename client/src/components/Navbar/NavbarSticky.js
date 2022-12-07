@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../helpers/AuthContext";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../assets/ludens-logo.png";
+import Navbar from "react-bootstrap/Navbar";
 import "./Navbar.css";
 
-function Navbar() {
+function NavbarSticky() {
   const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
@@ -14,13 +15,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <Navbar className="navbar" sticky="top">
       <div className="links">
         <img src={Logo} onClick={() => window.open("/", "_self")} />
         {!authState.status ? (
           <>
             <NavLink to="/login"> Login</NavLink>
-            <NavLink to="/registration"> Registration</NavLink>
+            <NavLink to="/registration"> Cadastro</NavLink>
           </>
         ) : (
           <>
@@ -32,14 +33,14 @@ function Navbar() {
       </div>
       <div className="loggedInContainer">
         <NavLink to={`/profile/${authState.id}`}>
-          <h2>{authState.username}</h2>
+          <h4>{authState.username}</h4>
         </NavLink>
         {authState.status && (
           <button onClick={routeChangeLogout}> Logout</button>
         )}
       </div>
-    </nav>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default NavbarSticky;

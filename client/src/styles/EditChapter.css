@@ -7,7 +7,7 @@
 .chapterEditionSpace {
   font-family: Roboto;
   width: 80vw;
-  height: 110vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -99,4 +99,99 @@ h1 {
   margin-right: 10px;
   color: black;
   font-weight: lighter;
+}
+
+.thumbnailContainer {
+  text-align: left;
+  color: black;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.video-thumbnail img {
+  width: 50%;
+  border-radius: 3px;
+}
+
+.editDocumentSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 69%;
+}
+
+.editDocumentSpace .document {
+  width: 100%;
+  height: auto;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: grid;
+  justify-content: left;
+  align-items: center;
+}
+
+.document .filePresent {
+  margin-left: 15px;
+}
+
+.document .documentTitle {
+  display: flex;
+  color: black;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10px;
+  width: 30%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.document .fireBaseComponent {
+  width: 55%;
+  background-color: white;
+}
+
+.document .documentOptContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
+  margin-right: 10px;
+  width: 15%;
+  background-color: white;
+}
+
+.document .documentOptContainer .documentDeleteButton {
+  color: black;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.addDocumentContainer {
+  display: flex;
+  place-items: left;
+  flex-direction: column;
+  width: 69%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.addDocumentContainer button {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: lightslategray;
+  color: white;
+  margin-top: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.addDocumentContainer input {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid lightgray;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

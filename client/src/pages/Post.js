@@ -73,7 +73,7 @@ function Post() {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
-        navigate("/");
+        navigate("/feed");
       });
   };
 

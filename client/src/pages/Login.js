@@ -22,7 +22,6 @@ function Login() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     axios
       .post("http://localhost:3001/api/users/login", data)
       .then((response) => {
@@ -32,12 +31,17 @@ function Login() {
           localStorage.setItem("accessToken", response.data.token);
           setAuthState({
             username: response.data.username,
+            type: response.data.type,
             id: response.data.id,
             status: true,
           });
           navigate("/");
         }
       });
+  };
+
+  const passwordRecovery = () => {
+    navigate("/forgotpass");
   };
 
   return (
@@ -67,7 +71,12 @@ function Login() {
             placeholder=""
             autoComplete="off"
           />
-          <button type="submit"> Login </button>
+          <button className="buttonLogin" type="submit">
+            Login
+          </button>
+          <button className="buttonRecoveryPass" onClick={passwordRecovery}>
+            Recuperar Senha
+          </button>
         </Form>
       </Formik>
     </div>
